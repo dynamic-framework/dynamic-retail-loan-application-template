@@ -11,13 +11,13 @@ export default function useSimulation() {
   const [loading, setLoading] = useState(false);
   const dispatch = useAppDispatch();
   const { amount, installment } = useAppSelector(getUserRequest);
-  const { productId } = useAppSelector(getOffer);
+  const { accountId } = useAppSelector(getOffer);
 
   const simulate = useCallback(
     async () => {
       const {
         perform,
-      } = LoanRepository.simulation(productId, amount ?? 0, installment);
+      } = LoanRepository.simulation(accountId, amount ?? 0, installment);
       try {
         setLoading(true);
         const data = await perform();
@@ -29,7 +29,7 @@ export default function useSimulation() {
         errorHandler(error);
       }
     },
-    [dispatch, productId, amount, installment],
+    [dispatch, accountId, amount, installment],
   );
 
   return {

@@ -15,10 +15,10 @@ export default function useApplyLoan() {
   const userId = liquidParser.parse('{{user.id}}');
   const simulation = useAppSelector(getSimulationResult);
   const {
-    productId,
+    accountId,
     amount,
     installments,
-  } = simulation!;
+  } = simulation;
 
   const applyLoan = useCallback(
     async () => {
@@ -26,7 +26,7 @@ export default function useApplyLoan() {
         perform,
       } = LoanRepository.apply(
         userId,
-        productId,
+        accountId,
         installments.count,
         amount,
       );
@@ -42,7 +42,7 @@ export default function useApplyLoan() {
         errorHandler(error);
       }
     },
-    [userId, productId, installments.count, amount, dispatch],
+    [userId, accountId, installments.count, amount, dispatch],
   );
 
   return {
