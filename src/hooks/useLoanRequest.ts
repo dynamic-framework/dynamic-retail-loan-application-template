@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { LoanRepository } from '@modyo-dynamic/modyo-service-retail';
-import { liquidParser } from '@dynamic-framework/ui';
+import { liquidParser } from '@dynamic-framework/ui-react';
 import { useAppDispatch } from '../store/hooks';
 import {
   setOffer, setRequestedInstallment,

@@ -1,5 +1,4 @@
-import { liquidParser } from '@dynamic-framework/ui';
-import { MButton, MIcon } from '@dynamic-framework/ui-react';
+import { DButton, DIcon, liquidParser } from '@dynamic-framework/ui-react';
 import { Trans, useTranslation } from 'react-i18next';
 
 export default function StatusRejected() {
@@ -28,11 +27,11 @@ export default function StatusRejected() {
         />
       </h5>
       <div className="d-flex align-items-center gap-3 bg-white rounded-1 px-4 py-3 mb-3 shadow-sm">
-        <MIcon icon="chat" size="24px" theme="secondary" />
+        <DIcon icon="chat" size="24px" theme="secondary" />
         <p>{t('status.rejected.message')}</p>
       </div>
-      <MButton
-        onMClick={goToHome}
+      <DButton
+        onEventClick={goToHome}
         text={t('status.rejected.button')}
         isPill
       />

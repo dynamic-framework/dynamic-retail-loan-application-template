@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable react/jsx-props-no-spreading */
 import {
-  MButton,
-  MInputCounter,
-  MInputCurrency,
+  DButton,
+  DInputCounter,
+  DInputCurrency,
   useFormatCurrency,
 } from '@dynamic-framework/ui-react';
 import { useMemo } from 'react';
@@ -57,28 +57,28 @@ export default function CreditSimulation() {
 
   return (
     <div className="bg-white shadow-sm p-3 rounded d-flex flex-column gap-3">
-      <MInputCurrency
+      <DInputCurrency
         label={t('simulation.value')}
-        mId="creditAmount"
+        innerId="creditAmount"
         hint={t('simulation.limitAmount', { min: format(minAmount), max: format(maxAmount) })}
-        onChange={(value) => dispatch(setRequestedAmount(value))}
+        onEventChange={(value) => dispatch(setRequestedAmount(value))}
         value={request.amount}
         minValue={minAmount}
         maxValue={maxAmount}
       />
-      <MInputCounter
-        mId="quota"
+      <DInputCounter
+        innerId="quota"
         label={t('simulation.installments')}
         minValue={minInstallments}
         maxValue={maxInstallments}
         value={request.installment}
         hint={t('simulation.installmentsRange', { min: minInstallments, max: maxInstallments })}
-        onMChange={({ detail }: CustomEvent<number>) => setInstallment(Number(detail))}
-        onMClick={({ detail }: CustomEvent<number>) => setInstallment(detail)}
+        onEventChange={({ detail }: CustomEvent<number>) => setInstallment(Number(detail))}
+        onEventClick={({ detail }: CustomEvent<number>) => setInstallment(detail)}
       />
       {simulation && isAnyFieldTouched && (
         <div className="mx-auto">
-          <MButton
+          <DButton
             text={t('recalculate')}
             isLoading={loading}
             isPill
@@ -90,12 +90,12 @@ export default function CreditSimulation() {
 
       {!simulation && (
         <div className="mx-auto">
-          <MButton
+          <DButton
             theme="primary"
             text={t('simulate')}
             isPill
             isLoading={loading}
-            onMClick={simulate}
+            onEventClick={simulate}
             {...(request.amount && !loading) && {
               iconEnd: 'check',
             }}

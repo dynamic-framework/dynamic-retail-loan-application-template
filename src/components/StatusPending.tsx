@@ -1,5 +1,4 @@
-import { liquidParser } from '@dynamic-framework/ui';
-import { MAlert, MButton } from '@dynamic-framework/ui-react';
+import { DAlert, DButton, liquidParser } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
 export default function StatusPending() {
@@ -22,13 +21,13 @@ export default function StatusPending() {
       <h2 className="fs-5 fw-bold text-gray text-center">
         {t('status.pending.text')}
       </h2>
-      <MAlert
+      <DAlert
         icon="clock"
       >
         {t('status.pending.message')}
-      </MAlert>
-      <MButton
-        onMClick={goToHome}
+      </DAlert>
+      <DButton
+        onEventClick={goToHome}
         text={t('status.pending.button')}
         isPill
       />

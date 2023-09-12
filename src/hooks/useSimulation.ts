@@ -1,7 +1,5 @@
 import { useCallback, useState } from 'react';
 
-import { LoanRepository } from '@modyo-dynamic/modyo-service-retail';
-
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { getOffer, getUserRequest } from '../store/selectors';
 import { setSimulation } from '../store/slice';

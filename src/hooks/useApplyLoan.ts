@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useCallback, useState } from 'react';
-import { LoanRepository } from '@modyo-dynamic/modyo-service-retail';
-import { liquidParser } from '@dynamic-framework/ui';
+import { liquidParser } from '@dynamic-framework/ui-react';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { getSimulationResult } from '../store/selectors';
 import errorHandler from '../utils/errorHandler';

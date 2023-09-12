@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import {
-  MButton,
-  MCurrencyText,
-  MIcon,
+  DButton,
+  DCurrencyText,
+  DIcon,
   useOffcanvasContext,
   useFormatCurrency,
   useModalContext,
-  MTooltip,
+  DTooltip,
 } from '@dynamic-framework/ui-react';
 import { Trans, useTranslation } from 'react-i18next';
 
@@ -26,7 +26,7 @@ export default function AdvancedSimulation() {
     },
     interestRate,
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  } = simulation!;
+  } = simulation;
   const { openModal } = useModalContext();
   const { openOffcanvas } = useOffcanvasContext();
   const { t } = useTranslation();
@@ -37,13 +37,13 @@ export default function AdvancedSimulation() {
       <h2 className="fw-bold fs-6">{t('conditions')}</h2>
       <div className="bg-gray-200 text-center p-3 rounded-1 d-flex gap-3 flex-column">
         <p>{t('yourPayment')}</p>
-        <MCurrencyText value={monthlyPayment} className="display-5 fw-bold" />
+        <DCurrencyText value={monthlyPayment} className="display-5 fw-bold" />
       </div>
       <div className="bg-indigo-soft p-3 rounded-1 d-flex flex-column gap-2">
         {amount && (
           <div className="d-flex justify-content-between">
             <span>{t('loanAmountLabel')}</span>
-            <MCurrencyText value={amount} className="fw-bold" />
+            <DCurrencyText value={amount} className="fw-bold" />
           </div>
         )}
         <div className="d-flex justify-content-between">
@@ -52,18 +52,18 @@ export default function AdvancedSimulation() {
         </div>
         <div className="d-flex justify-content-between">
           <span>{t('monthlyInstallments')}</span>
-          <MCurrencyText value={monthlyPayment ?? 0} className="fw-bold" />
+          <DCurrencyText value={monthlyPayment ?? 0} className="fw-bold" />
         </div>
         <div className="d-flex justify-content-between">
           <span className="d-flex align-items-center gap-2">
             {t('annualInterestRate')}
-            <MTooltip
+            <DTooltip
               className="bg-transparent border-0 p-0 cursor-help"
               placement="top"
               padding={16}
               offSet={5}
               Component={(
-                <MIcon
+                <DIcon
                   icon="question-circle"
                   theme="secondary"
                   size="1rem"
@@ -71,7 +71,7 @@ export default function AdvancedSimulation() {
               )}
             >
               <small>{t('tooltip.annualInterestRate')}</small>
-            </MTooltip>
+            </DTooltip>
           </span>
           <span>
             {interestRate.annually}
@@ -81,13 +81,13 @@ export default function AdvancedSimulation() {
         <div className="d-flex justify-content-between">
           <span className="d-flex align-items-center gap-2">
             {t('monthlyInterestRate')}
-            <MTooltip
+            <DTooltip
               className="bg-transparent border-0 p-0 cursor-help"
               placement="top"
               padding={16}
               offSet={5}
               Component={(
-                <MIcon
+                <DIcon
                   icon="question-circle"
                   theme="secondary"
                   size="1rem"
@@ -95,7 +95,7 @@ export default function AdvancedSimulation() {
               )}
             >
               <small className="">{t('tooltip.monthlyInterestRate')}</small>
-            </MTooltip>
+            </DTooltip>
           </span>
           <span>
             {interestRate.monthly}
@@ -132,22 +132,22 @@ export default function AdvancedSimulation() {
       </span>
       <div className="row py-3">
         <div className="col-12 col-lg-6 mb-3 mb-lg-0">
-          <MButton
+          <DButton
             className="d-grid"
             text={t('actions.decline')}
             variant="outline"
             theme="secondary"
             isPill
-            onMClick={() => openModal('declineOffer')}
+            onEventClick={() => openModal('declineOffer')}
           />
         </div>
         <div className="col-12 col-lg-6">
-          <MButton
+          <DButton
             className="d-grid"
             text={t('actions.accept')}
             isPill
             isLoading={loading}
-            onMClick={applyLoan}
+            onEventClick={applyLoan}
           />
         </div>
       </div>
