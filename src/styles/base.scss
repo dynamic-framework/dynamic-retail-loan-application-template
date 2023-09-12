@@ -1,0 +1,5 @@
+@import "~@dynamic-framework/ui/src/style/abstracts/+import";
+
+.offcanvas-terms .offcanvas {
+  --#{$prefix}offcanvas-width: 50%;
+}

@@ -1,0 +1,62 @@
+{
+  "title": "Solicitar crédito",
+  "status": {
+    "rejected": {
+      "alternativeImage": "Rechazado",
+      "text": "Si cambias de opinión, nuestra propuesta seguirá vigente por <bold>{days} días</bold>",
+      "message": "Puedes volver a hacer la solicitud más adelante o, si te interesa; tenemos otros productos disponibles para ti.",
+      "button": "Revisar otros productos"
+    },
+    "pending": {
+      "alternativeImage": "Pendiente",
+      "text": "Recibimos tu solicitud, te notificaremos vía e-mail y SMS cuando esté lista.",
+      "message": "Este proceso puede tomar entre 1 y 3 horas; por parte de nuestro equipo. Puedes tomar una taza de café mientras esperas.",
+      "button": "Regresar al dashboard"
+    }
+  },
+  "simulation": {
+    "value": "Valor",
+    "limitAmount": "Desde {min} hasta {max}",
+    "installments": "Cuotas",
+    "installmentsRange": "Ingrese un número entre {min} y {max}"
+  },
+  "simulate": "Simular",
+  "loanAmount": "Valor solicitado: {amount}",
+  "loanAmountLabel": "Valor solicitado",
+  "monthlyPayment": "Valor de las cuotas: {payment}",
+  "interestRate": "Interés EA: {rate}%",
+  "totalPayment": "Total a pagar: {total}",
+  "conditions": "Condiciones de solicitud",
+  "yourPayment": "Tu pago mensual sería de:",
+  "term": "Plazo",
+  "productId": "Product ID",
+  "termMonths": "{term} meses",
+  "monthlyInstallments": "Valor cuota mensual",
+  "annualInterestRate": "Tasa de interés efectiva anual",
+  "monthlyInterestRate": "Tasas de interés mensual",
+  "lifeInsurance": {
+    "label": "Tasa seguro de vida deudor anticipada",
+    "rate": "0,4%"
+  },
+  "advisoryFees": "Tasa comisión de asesoría",
+  "annotation": "*Sujeto a validación y cambios finales por parte de Dynamic. Toda información de pagos retractos o devoluciones podrás encontrarlas en nuestro <1>portal de soporte</1> y al dar clic en el botón ”Aceptar Pre-oferta” aceptas nuestros <2>terminos y condiciones</2>",
+  "actions": {
+    "decline": "Rechazar pre-oferta",
+    "accept": "Aceptar pre-oferta"
+  },
+  "modal": {
+    "header": "¿Estás seguro que quieres rechazar la oferta?",
+    "body": "Para retomar la oferta sera necesario realizar el proceso nuevamente.",
+    "keepOffer": "Mantener oferta",
+    "declineOffer": "Sí, estoy seguro"
+  },
+  "tooltip": {
+    "annualInterestRate": "Es el precio (expresado en porcentaje) que se paga por pedir prestado el dinero, refleja no sólo la tasa de interés, sino también las tarifas que debe pagar para obtener el préstamo",
+    "monthlyInterestRate": "Es el precio (expresado en porcentaje) que se paga por pedir prestado el dinero, la tasa de interés no incluye las tarifas que le cobran por obtener el préstamo",
+    "lifeInsurance": "Es el valor que debes pagar para adquirir una cobertura sobre tu crédito, en caso de fallecimiento o incapacidad total y permanente"
+  },
+  "recalculate": "Recalcular",
+  "termsAndConditions": "Términos y condiciones",
+  "agree": "Entendido",
+  "error": "Ha habido un error"
+}

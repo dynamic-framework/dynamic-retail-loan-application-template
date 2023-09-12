@@ -1,0 +1,62 @@
+{
+  "title": "Personal loans",
+  "status": {
+    "rejected": {
+      "alternativeImage": "Rejected",
+      "text": "If you change your mind, this offer will be available for <bold>{days} days</bold>",
+      "message": "You can apply again anytime in the future or, if you're interested, check out our other products.",
+      "button": "See other products"
+    },
+    "pending": {
+      "alternativeImage": "Pending",
+      "text": "Your application has been received. We'll notify you via e-mail and SMS once it's ready.",
+      "message": "This process can take our team between 1 and 3 hours. Have a coffee while you wait!",
+      "button": "Return to Dashboard"
+    }
+  },
+  "simulation": {
+    "value": "Value",
+    "limitAmount": "From {min} to {max}",
+    "installments": "Installments",
+    "installmentsRange": "Enter a number between {min} and {max}"
+  },
+  "simulate": "Simulate",
+  "loanAmount": "Loan amount: {amount}",
+  "loanAmountLabel": "Loan amount",
+  "monthlyPayment": "Monthly payment: {payment}",
+  "interestRate": "Interest rate: {rate}%",
+  "totalPayment": "Total Payment: {total}",
+  "conditions": "Conditions",
+  "yourPayment": "Your total monthly payment will be:",
+  "term": "Term",
+  "productId": "Product ID",
+  "termMonths": "{term} months",
+  "monthlyInstallments": "Monthly installments",
+  "annualInterestRate": "Annual interest rate",
+  "monthlyInterestRate": "Monthly interest rate",
+  "lifeInsurance": {
+    "label": "Monthly life insurance rate",
+    "rate": "0,4%"
+  },
+  "advisoryFees": "Advisory fees",
+  "annotation": "*Subject to validations and adjustments made by Dynamic. All of the withdraws or disbursements can be found on our <1>support page</1> and by clicking the ”Accept pre-approval” you are agreeing to the <2>terms and conditions</2>",
+  "actions": {
+    "decline": "Decline pre-approval",
+    "accept": "Accept pre-approval"
+  },
+  "modal": {
+    "header": "Are you sure you want to decline the offer?",
+    "body": "To resume the process, you'll have to restart from the beginning.",
+    "keepOffer": "Keep Offer",
+    "declineOffer": "Yes, I'm sure"
+  },
+  "tooltip": {
+    "annualInterestRate": "The price (expressed in percentage) paid by the borrower for the loan, reflecting not only the interest rate but also fees paid when obtaining the principal amount",
+    "monthlyInterestRate": "The price (expressed in percentage) paid by the borrower for the loan, not including any fees paid when obtaining the principal amount",
+    "lifeInsurance": "The additional amount that will be paid for providing collateral for securing your loan in case of death or severe and permanent disability"
+  },
+  "recalculate": "Recalculate",
+  "termsAndConditions": "Terms and conditions",
+  "agree": "I Agree",
+  "error": "There was an error"
+}

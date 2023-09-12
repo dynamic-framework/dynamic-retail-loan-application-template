@@ -1,0 +1,25 @@
+{
+  "site": {
+    "name": "My Site",
+    "language": "en-US",
+    "url": "https://un.modyo.cloud/testing"
+  },
+  "account": {
+    "url": "https://un.modyo.cloud"
+  },
+  "user": {
+    "access_token": null,
+    "id": "8a44b7ff83f315110183f618ff2d0473"
+  },
+  "vars": {
+    "currency-symbol": "$",
+    "currency-precision": 2,
+    "currency-separator": ".",
+    "currency-decimal": ",",
+    "dashboard-path": "#",
+    "api-user-id": "8a44df697ba7e4b3017ba9d3796315b5",
+    "api-path": "https://nyjx3vieqb.execute-api.us-east-1.amazonaws.com/certification",
+    "use-authentication": false,
+    "mock-loans": true
+  }
+}
