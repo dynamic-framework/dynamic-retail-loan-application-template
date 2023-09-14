@@ -29,7 +29,6 @@
   "conditions": "Conditions",
   "yourPayment": "Your total monthly payment will be:",
   "term": "Term",
-  "productId": "Product ID",
   "termMonths": "{term} months",
   "monthlyInstallments": "Monthly installments",
   "annualInterestRate": "Annual interest rate",

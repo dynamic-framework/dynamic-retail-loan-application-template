@@ -29,7 +29,6 @@
   "conditions": "Condiciones de solicitud",
   "yourPayment": "Tu pago mensual sería de:",
   "term": "Plazo",
-  "productId": "Product ID",
   "termMonths": "{term} meses",
   "monthlyInstallments": "Valor cuota mensual",
   "annualInterestRate": "Tasa de interés efectiva anual",
