@@ -8,7 +8,6 @@ import {
 } from '@dynamic-framework/ui-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import useSimulation from '../hooks/useSimulation';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import {
   getOffer,
@@ -20,13 +19,14 @@ import {
   setRequestedInstallment,
 } from '../store/slice';
 import AdvancedSimulation from './AdvancedSimulation';
+import useSimulation from '../services/hooks/useSimulation';
 
 export default function CreditSimulation() {
   const dispatch = useAppDispatch();
 
   const { t } = useTranslation();
   const { format } = useFormatCurrency();
-  const { loading, simulate } = useSimulation();
+  const { loading, callback: simulate } = useSimulation();
 
   const request = useAppSelector(getUserRequest);
   const simulation = useAppSelector(getSimulationResult);
@@ -82,7 +82,7 @@ export default function CreditSimulation() {
             text={t('recalculate')}
             isLoading={loading}
             isPill
-            onClick={simulate}
+            onEventClick={simulate}
           />
         </div>
       )}

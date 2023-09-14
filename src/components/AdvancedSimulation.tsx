@@ -12,10 +12,10 @@ import { Trans, useTranslation } from 'react-i18next';
 
 import { useAppSelector } from '../store/hooks';
 import { getSimulationResult } from '../store/selectors';
-import useApplyLoan from '../hooks/useApplyLoan';
+import useApplyLoan from '../services/hooks/useApplyLoan';
 
 export default function AdvancedSimulation() {
-  const { loading, applyLoan } = useApplyLoan();
+  const { loading, callback: applyLoan } = useApplyLoan();
   const simulation = useAppSelector(getSimulationResult);
   const {
     amount,
@@ -26,7 +26,7 @@ export default function AdvancedSimulation() {
     },
     interestRate,
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  } = simulation;
+  } = simulation!;
   const { openModal } = useModalContext();
   const { openOffcanvas } = useOffcanvasContext();
   const { t } = useTranslation();
