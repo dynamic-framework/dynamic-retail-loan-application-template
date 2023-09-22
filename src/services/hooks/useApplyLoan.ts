@@ -11,7 +11,6 @@ export default function useApplyLoan() {
   const [loading, setLoading] = useState(false);
   const dispatch = useAppDispatch();
 
-  // Check idempotencyKey
   const userId = liquidParser.parse('{{user.id}}');
   const simulation = useAppSelector(getSimulationResult);
   const abortController = new AbortController();
