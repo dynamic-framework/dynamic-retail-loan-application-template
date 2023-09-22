@@ -1,4 +1,8 @@
-import { MButton, MModal, ModalProps } from '@dynamic-framework/ui-react';
+import {
+  DButton,
+  DModal,
+  ModalProps,
+} from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../store/hooks';
 import { setStatus } from '../store/slice';
@@ -7,12 +11,12 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   return (
-    <MModal
+    <DModal
       name="declineOffer"
       isCentered
       isStatic
       showCloseButton
-      onMClose={() => closeModal()}
+      onEventClose={() => closeModal()}
     >
       <div slot="header">
         <h5 className="fw-semibold">
@@ -25,24 +29,24 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
         </div>
       </div>
       <div slot="footer">
-        <MButton
+        <DButton
           class="d-grid"
           text={t('modal.keepOffer')}
           variant="outline"
           theme="secondary"
           isPill
-          onClick={() => closeModal()}
+          onEventClick={() => closeModal()}
         />
-        <MButton
+        <DButton
           class="d-grid"
           text={t('modal.declineOffer')}
           isPill
-          onClick={() => {
+          onEventClick={() => {
             dispatch(setStatus('rejected'));
             closeModal();
           }}
         />
       </div>
-    </MModal>
+    </DModal>
   );
 }

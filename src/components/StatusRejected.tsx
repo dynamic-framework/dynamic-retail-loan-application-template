@@ -1,14 +1,10 @@
-import { liquidParser } from '@dynamic-framework/ui';
-import { MButton, MIcon } from '@dynamic-framework/ui-react';
+import { DButton, DIcon } from '@dynamic-framework/ui-react';
 import { Trans, useTranslation } from 'react-i18next';
+import WidgetUtils from '../utils/widgetUtils';
 
 export default function StatusRejected() {
   const { t } = useTranslation();
-
-  const goToHome = () => {
-    const urlDashboard = `${liquidParser.parse('{{site.url}}')}/${liquidParser.parse('{{vars.dashboard-path}}')}`;
-    window.location.href = urlDashboard;
-  };
+  const { goToPath } = WidgetUtils();
 
   return (
     <div className="col-12 col-lg-8 col-xl-6 d-flex flex-column gap-3 justify-content-center align-items-center">
@@ -28,11 +24,11 @@ export default function StatusRejected() {
         />
       </h5>
       <div className="d-flex align-items-center gap-3 bg-white rounded-1 px-4 py-3 mb-3 shadow-sm">
-        <MIcon icon="chat" size="24px" theme="secondary" />
+        <DIcon icon="chat" size="24px" theme="secondary" />
         <p>{t('status.rejected.message')}</p>
       </div>
-      <MButton
-        onMClick={goToHome}
+      <DButton
+        onEventClick={() => goToPath('DASHBOARD')}
         text={t('status.rejected.button')}
         isPill
       />

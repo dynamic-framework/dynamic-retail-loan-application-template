@@ -16,6 +16,7 @@ specifiers:
   '@types/webpack-env': ^1.18.0
   '@typescript-eslint/eslint-plugin': ^5.13.0
   '@typescript-eslint/parser': ^5.0.0
+  axios: ^1.5.0
   eslint: 8.22.0
   eslint-config-airbnb: 19.0.4
   eslint-config-airbnb-typescript: ^17.0.0
@@ -46,6 +47,7 @@ dependencies:
   '@testing-library/jest-dom': 5.17.0
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 13.5.0_@testing-library+dom@9.3.1
+  axios: 1.5.0
   i18next: 21.9.2
   liquidjs: 9.43.0
   react: 18.2.0

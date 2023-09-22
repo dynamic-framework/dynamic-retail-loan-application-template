@@ -1,17 +1,17 @@
-import { OffcanvasProps, MOffcanvas, MButton } from '@dynamic-framework/ui-react';
+import { OffcanvasProps, DOffcanvas, DButton } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
 export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
   const { t } = useTranslation();
 
   return (
-    <MOffcanvas
+    <DOffcanvas
       name="termsAndConditions"
       showCloseButton
       openFrom="end"
       className="offcanvas-terms"
       footerActionPlacement="end"
-      onMClose={() => closeOffcanvas()}
+      onEventClose={() => closeOffcanvas()}
     >
       <div slot="header">
         <h4 className="fw-bold">{t('termsAndConditions')}</h4>
@@ -88,12 +88,12 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
         </div>
       </div>
       <div slot="footer">
-        <MButton
+        <DButton
           text={t('agree')}
           isPill
-          onMClick={() => closeOffcanvas()}
+          onEventClick={() => closeOffcanvas()}
         />
       </div>
-    </MOffcanvas>
+    </DOffcanvas>
   );
 }

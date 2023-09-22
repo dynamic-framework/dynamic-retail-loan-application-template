@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { LoanOffer, LoanSimulation } from '@modyo-dynamic/modyo-service-retail';
+import { LoanOffer, LoanSimulation } from '../services/interface';
 
 export type ViewStatus = 'rejected' | 'pending';
 
@@ -22,7 +22,7 @@ const initialState = {
   minAvailableInstallments: 0,
   maxAvailableInstallments: 0,
   offer: {
-    productId: '',
+    accountId: '',
     name: '',
     type: '',
     minAmount: 0,

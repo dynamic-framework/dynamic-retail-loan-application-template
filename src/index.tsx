@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import '@dynamic-framework/ui/dist/css/dynamic-ui.css';
 import '@dynamic-framework/ui-react/dist/css/dynamic-ui-react.css';
 
 import './styles/base.scss';
