@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useCallback, useState } from 'react';
-import { liquidParser } from '@dynamic-framework/ui-react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getSimulationResult } from '../../store/selectors';
 import errorHandler from '../../utils/errorHandler';
 import { setStatus } from '../../store/slice';
 import { LoanRepository } from '../repositories';
+import { USER_ID } from '../../config/widgetConfig';
 
 export default function useApplyLoan() {
   const [loading, setLoading] = useState(false);
   const dispatch = useAppDispatch();
 
-  const userId = liquidParser.parse('{{user.id}}');
   const simulation = useAppSelector(getSimulationResult);
   const abortController = new AbortController();
   const {
@@ -25,7 +24,7 @@ export default function useApplyLoan() {
       try {
         setLoading(true);
         await LoanRepository.applyOffer(
-          userId,
+          USER_ID,
           accountId,
           installments.count,
           amount,
@@ -39,7 +38,7 @@ export default function useApplyLoan() {
         errorHandler(error);
       }
     },
-    [userId, accountId, installments.count, amount, abortController.signal, dispatch],
+    [accountId, installments.count, amount, abortController.signal, dispatch],
   );
 
   return {

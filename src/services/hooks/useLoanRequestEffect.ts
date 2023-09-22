@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import { liquidParser } from '@dynamic-framework/ui-react';
 import { useAppDispatch } from '../../store/hooks';
 import { LoanRepository } from '../repositories';
 import { setOffer, setRequestedInstallment } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { USER_ID } from '../../config/widgetConfig';
 
 export default function useLoanRequestEffect() {
   const [loading, setLoading] = useState(false);
   const dispatch = useAppDispatch();
-  const userId = liquidParser.parse('{{user.id}}');
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -16,7 +15,7 @@ export default function useLoanRequestEffect() {
       try {
         setLoading(true);
         const data = await LoanRepository.listOffers(
-          userId,
+          USER_ID,
           { abortSignal: abortController.signal },
         );
         const offer = data[0];
@@ -31,7 +30,7 @@ export default function useLoanRequestEffect() {
     return () => {
       abortController.abort();
     };
-  }, [dispatch, userId]);
+  }, [dispatch]);
 
   return {
     loading,
