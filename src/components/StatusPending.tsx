@@ -1,12 +1,12 @@
-import { DAlert, DButton, liquidParser } from '@dynamic-framework/ui-react';
+import { DAlert, DButton } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
+import WidgetUtils from '../utils/widgetUtils';
 
 export default function StatusPending() {
   const { t } = useTranslation();
-
+  const { goToPath } = WidgetUtils();
   const goToHome = () => {
-    const urlDashboard = `${liquidParser.parse('{{site.url}}')}/${liquidParser.parse('{{vars.dashboard-path}}')}`;
-    window.location.href = urlDashboard;
+    goToPath('DASHBOARD');
   };
 
   return (
