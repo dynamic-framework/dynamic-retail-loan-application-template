@@ -6,10 +6,6 @@ export default function StatusRejected() {
   const { t } = useTranslation();
   const { goToPath } = WidgetUtils();
 
-  const goToHome = () => {
-    goToPath('DASHBOARD');
-  };
-
   return (
     <div className="col-12 col-lg-8 col-xl-6 d-flex flex-column gap-3 justify-content-center align-items-center">
       <div>
@@ -32,7 +28,7 @@ export default function StatusRejected() {
         <p>{t('status.rejected.message')}</p>
       </div>
       <DButton
-        onEventClick={goToHome}
+        onEventClick={() => goToPath('DASHBOARD')}
         text={t('status.rejected.button')}
         isPill
       />
