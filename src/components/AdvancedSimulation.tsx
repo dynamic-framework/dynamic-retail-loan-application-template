@@ -37,7 +37,7 @@ export default function AdvancedSimulation() {
       <h2 className="fw-bold fs-6">{t('conditions')}</h2>
       <div className="bg-gray-200 text-center p-3 rounded-1 d-flex gap-3 flex-column">
         <p>{t('yourPayment')}</p>
-        <DCurrencyText value={monthlyPayment} className="display-5 fw-bold" />
+        <DCurrencyText value={monthlyPayment} className="fs-3 fw-bold" />
       </div>
       <div className="bg-indigo-soft p-3 rounded-1 d-flex flex-column gap-2">
         {amount && (
