@@ -32,6 +32,7 @@ export default function useApplyLoan() {
 
         );
         dispatch(setStatus('pending'));
+        window.prepareNotification?.('123');
         setLoading(false);
       } catch (error) {
         setLoading(false);
