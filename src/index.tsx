@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import './styles/base.scss';
-import './config/liquidConfig';
-import './config/i18nConfig';
-
 import {
   LiquidContextProvider,
   ModalContextProvider,
   OffcanvasContextProvider,
 } from '@dynamic-framework/ui-react';
+
+import './styles/base.scss';
+import './config/liquidConfig';
+import './config/i18nConfig';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
