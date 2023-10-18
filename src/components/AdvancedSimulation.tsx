@@ -138,7 +138,7 @@ export default function AdvancedSimulation() {
             variant="outline"
             theme="secondary"
             isPill
-            onEventClick={() => openModal('declineOffer')}
+            onClick={() => openModal('declineOffer')}
           />
         </div>
         <div className="col-12 col-lg-6">
@@ -147,7 +147,7 @@ export default function AdvancedSimulation() {
             text={t('actions.accept')}
             isPill
             isLoading={loading}
-            onEventClick={applyLoan}
+            onClick={applyLoan}
           />
         </div>
       </div>

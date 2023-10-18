@@ -27,7 +27,7 @@ export default function StatusPending() {
         {t('status.pending.message')}
       </DAlert>
       <DButton
-        onEventClick={goToHome}
+        onClick={goToHome}
         text={t('status.pending.button')}
         isPill
       />

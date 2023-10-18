@@ -59,22 +59,21 @@ export default function CreditSimulation() {
     <div className="bg-white shadow-sm p-3 rounded d-flex flex-column gap-3">
       <DInputCurrency
         label={t('simulation.value')}
-        innerId="creditAmount"
+        id="creditAmount"
         hint={t('simulation.limitAmount', { min: format(minAmount), max: format(maxAmount) })}
-        onEventChange={(value) => dispatch(setRequestedAmount(value))}
+        onChange={(value) => dispatch(setRequestedAmount(value))}
         value={request.amount}
         minValue={minAmount}
         maxValue={maxAmount}
       />
       <DInputCounter
-        innerId="quota"
+        id="quota"
         label={t('simulation.installments')}
         minValue={minInstallments}
         maxValue={maxInstallments}
         value={request.installment}
         hint={t('simulation.installmentsRange', { min: minInstallments, max: maxInstallments })}
-        onEventChange={({ detail }: CustomEvent<number>) => setInstallment(Number(detail))}
-        onEventClick={({ detail }: CustomEvent<number>) => setInstallment(detail)}
+        onChange={(detail) => setInstallment(Number(detail))}
       />
       {simulation && isAnyFieldTouched && (
         <div className="mx-auto">
@@ -82,7 +81,7 @@ export default function CreditSimulation() {
             text={t('recalculate')}
             isLoading={loading}
             isPill
-            onEventClick={simulate}
+            onClick={simulate}
           />
         </div>
       )}
@@ -95,7 +94,7 @@ export default function CreditSimulation() {
             text={t('simulate')}
             isPill
             isLoading={loading}
-            onEventClick={simulate}
+            onClick={simulate}
             {...(request.amount && !loading) && {
               iconEnd: 'check',
             }}
