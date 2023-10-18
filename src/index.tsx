@@ -8,7 +8,6 @@ import {
   OffcanvasContextProvider,
 } from '@dynamic-framework/ui-react';
 
-import './styles/base.scss';
 import './config/liquidConfig';
 import './config/i18nConfig';
 
@@ -17,6 +16,13 @@ import reportWebVitals from './reportWebVitals';
 import store from './store/store';
 import DeclineOfferModal from './components/DeclineOfferModal';
 import TermsAndConditions from './components/TermsAndConditions';
+
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line global-require
+  require('@dynamic-framework/ui-react/dist/css/dynamic-ui.css');
+}
+
+require('./styles/base.scss');
 
 const root = ReactDOM.createRoot(document.getElementById('loanApplicationTemplate') as Element);
 root.render(
@@ -47,8 +53,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
-  require('@dynamic-framework/ui-react/dist/css/dynamic-ui.css');
-}
