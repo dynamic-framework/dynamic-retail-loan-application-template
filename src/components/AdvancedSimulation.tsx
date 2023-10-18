@@ -133,8 +133,8 @@ export default function AdvancedSimulation() {
       <div className="row py-3">
         <div className="col-12 col-lg-6 mb-3 mb-lg-0">
           <DButton
-            className="d-grid"
             text={t('actions.decline')}
+            className="w-100"
             variant="outline"
             theme="secondary"
             isPill
@@ -143,8 +143,8 @@ export default function AdvancedSimulation() {
         </div>
         <div className="col-12 col-lg-6">
           <DButton
-            className="d-grid"
             text={t('actions.accept')}
+            className="w-100"
             isPill
             isLoading={loading}
             onClick={applyLoan}
