@@ -28,7 +28,7 @@ export default function StatusRejected() {
         <p>{t('status.rejected.message')}</p>
       </div>
       <DButton
-        onEventClick={() => goToPath('DASHBOARD')}
+        onClick={() => goToPath('DASHBOARD')}
         text={t('status.rejected.button')}
         isPill
       />

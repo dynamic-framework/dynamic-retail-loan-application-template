@@ -1,4 +1,11 @@
-import { OffcanvasProps, DOffcanvas, DButton } from '@dynamic-framework/ui-react';
+import {
+  OffcanvasProps,
+  DOffcanvas,
+  DButton,
+  DOffcanvasHeader,
+  DOffcanvasBody,
+  DOffcanvasFooter,
+} from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
 export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
@@ -7,16 +14,16 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
   return (
     <DOffcanvas
       name="termsAndConditions"
-      showCloseButton
       openFrom="end"
       className="offcanvas-terms"
-      footerActionPlacement="end"
-      onEventClose={() => closeOffcanvas()}
     >
-      <div slot="header">
+      <DOffcanvasHeader
+        showCloseButton
+        onClose={() => closeOffcanvas()}
+      >
         <h4 className="fw-bold">{t('termsAndConditions')}</h4>
-      </div>
-      <div slot="body">
+      </DOffcanvasHeader>
+      <DOffcanvasBody>
         <div className="d-flex flex-column gap-4">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -86,14 +93,16 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
           </p>
           <hr />
         </div>
-      </div>
-      <div slot="footer">
+      </DOffcanvasBody>
+      <DOffcanvasFooter
+        footerActionPlacement="end"
+      >
         <DButton
           text={t('agree')}
           isPill
-          onEventClick={() => closeOffcanvas()}
+          onClick={() => closeOffcanvas()}
         />
-      </div>
+      </DOffcanvasFooter>
     </DOffcanvas>
   );
 }
