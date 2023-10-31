@@ -17,8 +17,11 @@ import store from './store/store';
 import DeclineOfferModal from './components/DeclineOfferModal';
 import TermsAndConditions from './components/TermsAndConditions';
 
-import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
-import './styles/base.scss';
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line global-require
+  require('@dynamic-framework/ui-react/dist/css/dynamic-ui.css');
+}
+require('./styles/base.scss');
 
 const root = ReactDOM.createRoot(document.getElementById('loanApplicationTemplate') as Element);
 root.render(
