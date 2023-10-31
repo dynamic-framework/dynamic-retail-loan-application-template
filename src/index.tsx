@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import {
-  LiquidContextProvider,
+  DContextProvider,
   ModalContextProvider,
   OffcanvasContextProvider,
 } from '@dynamic-framework/ui-react';
@@ -17,17 +17,13 @@ import store from './store/store';
 import DeclineOfferModal from './components/DeclineOfferModal';
 import TermsAndConditions from './components/TermsAndConditions';
 
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
-  require('@dynamic-framework/ui-react/dist/css/dynamic-ui.css');
-}
-
-require('./styles/base.scss');
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+import './styles/base.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('loanApplicationTemplate') as Element);
 root.render(
   <React.StrictMode>
-    <LiquidContextProvider>
+    <DContextProvider>
       <Provider store={store}>
         <OffcanvasContextProvider
           portalName="offcanvasPortal"
@@ -45,7 +41,7 @@ root.render(
           </ModalContextProvider>
         </OffcanvasContextProvider>
       </Provider>
-    </LiquidContextProvider>
+    </DContextProvider>
   </React.StrictMode>,
 );
 
