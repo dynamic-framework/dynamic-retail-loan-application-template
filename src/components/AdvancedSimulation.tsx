@@ -3,9 +3,9 @@ import {
   DButton,
   DCurrencyText,
   DIcon,
-  useOffcanvasContext,
+  useDOffcanvasContext,
+  useDModalContext,
   useFormatCurrency,
-  useModalContext,
   DTooltip,
 } from '@dynamic-framework/ui-react';
 import { Trans, useTranslation } from 'react-i18next';
@@ -27,8 +27,8 @@ export default function AdvancedSimulation() {
     interestRate,
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   } = simulation!;
-  const { openModal } = useModalContext();
-  const { openOffcanvas } = useOffcanvasContext();
+  const { openModal } = useDModalContext();
+  const { openOffcanvas } = useDOffcanvasContext();
   const { t } = useTranslation();
   const { format } = useFormatCurrency();
 
@@ -121,7 +121,7 @@ export default function AdvancedSimulation() {
             />,
             2: <span
               className="text-secondary text-decoration-underline"
-              onClick={() => openOffcanvas('termsAndConditions')}
+              onClick={() => openOffcanvas('termsAndConditions', undefined)}
               onKeyDown={() => {}}
               role="button"
               tabIndex={0}
@@ -137,16 +137,16 @@ export default function AdvancedSimulation() {
             className="w-100"
             variant="outline"
             theme="secondary"
-            isPill
-            onClick={() => openModal('declineOffer')}
+            pill
+            onClick={() => openModal('declineOffer', undefined)}
           />
         </div>
         <div className="col-12 col-lg-6">
           <DButton
             text={t('actions.accept')}
             className="w-100"
-            isPill
-            isLoading={loading}
+            pill
+            loading={loading}
             onClick={applyLoan}
           />
         </div>

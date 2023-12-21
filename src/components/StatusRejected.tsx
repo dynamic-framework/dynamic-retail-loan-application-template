@@ -30,7 +30,7 @@ export default function StatusRejected() {
       <DButton
         onClick={() => goToPath('DASHBOARD')}
         text={t('status.rejected.button')}
-        isPill
+        pill
       />
     </div>
   );
