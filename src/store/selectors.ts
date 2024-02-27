@@ -1,29 +1,29 @@
-import { createDraftSafeSelector } from '@reduxjs/toolkit';
+import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
 const getState = (state: RootState) => state.widget;
 
-export const getStatus = createDraftSafeSelector(
+export const getStatus = createSelector(
   getState,
   (widget) => widget.status,
 );
 
-export const getSimulationResult = createDraftSafeSelector(
+export const getSimulationResult = createSelector(
   getState,
   (widget) => widget.simulation,
 );
 
-export const getOfferInstallments = createDraftSafeSelector(
+export const getOfferInstallments = createSelector(
   getState,
   (widget) => widget.offer?.installments,
 );
 
-export const getOffer = createDraftSafeSelector(
+export const getOffer = createSelector(
   getState,
   (widget) => widget.offer,
 );
 
-export const getUserRequest = createDraftSafeSelector(
+export const getUserRequest = createSelector(
   getState,
   (widget) => widget.requested,
 );
