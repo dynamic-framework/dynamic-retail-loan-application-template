@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 
 import {
   DContextProvider,
-  ModalContextProvider,
-  OffcanvasContextProvider,
+  DModalContextProvider,
+  DOffcanvasContextProvider,
 } from '@dynamic-framework/ui-react';
 
 import './config/liquidConfig';
@@ -25,21 +25,21 @@ root.render(
   <React.StrictMode>
     <DContextProvider>
       <Provider store={store}>
-        <OffcanvasContextProvider
+        <DOffcanvasContextProvider
           portalName="offcanvasPortal"
           availableOffcanvas={{
             termsAndConditions: TermsAndConditions,
           }}
         >
-          <ModalContextProvider
+          <DModalContextProvider
             portalName="modalPortal"
             availableModals={{
               declineOffer: DeclineOfferModal,
             }}
           >
             <App />
-          </ModalContextProvider>
-        </OffcanvasContextProvider>
+          </DModalContextProvider>
+        </DOffcanvasContextProvider>
       </Provider>
     </DContextProvider>
   </React.StrictMode>,
