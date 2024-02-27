@@ -58,7 +58,7 @@ export default function AdvancedSimulation() {
           <span className="d-flex align-items-center gap-2">
             {t('annualInterestRate')}
             <DTooltip
-              className="bg-transparent border-0 p-0 cursor-help"
+              className="border-0 p-2 cursor-help"
               placement="top"
               padding={16}
               offSet={5}
@@ -82,7 +82,7 @@ export default function AdvancedSimulation() {
           <span className="d-flex align-items-center gap-2">
             {t('monthlyInterestRate')}
             <DTooltip
-              className="bg-transparent border-0 p-0 cursor-help"
+              className="border-0 p-2 cursor-help"
               placement="top"
               padding={16}
               offSet={5}

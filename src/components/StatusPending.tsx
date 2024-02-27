@@ -23,6 +23,7 @@ export default function StatusPending() {
       </h2>
       <DAlert
         icon="clock"
+        soft
       >
         {t('status.pending.message')}
       </DAlert>
