@@ -79,8 +79,8 @@ export default function CreditSimulation() {
         <div className="mx-auto">
           <DButton
             text={t('recalculate')}
-            isLoading={loading}
-            isPill
+            loading={loading}
+            pill
             onClick={simulate}
           />
         </div>
@@ -92,8 +92,8 @@ export default function CreditSimulation() {
           <DButton
             theme="primary"
             text={t('simulate')}
-            isPill
-            isLoading={loading}
+            pill
+            loading={loading}
             onClick={simulate}
             {...(request.amount && !loading) && {
               iconEnd: 'check',
