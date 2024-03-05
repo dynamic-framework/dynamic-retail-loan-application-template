@@ -39,7 +39,7 @@ export default function AdvancedSimulation() {
         <p>{t('yourPayment')}</p>
         <DCurrencyText value={monthlyPayment} className="fs-3 fw-bold" />
       </div>
-      <div className="bg-indigo-soft p-3 rounded-1 d-flex flex-column gap-2">
+      <div className="bg-secondary-soft p-3 rounded-1 d-flex flex-column gap-2">
         {amount && (
           <div className="d-flex justify-content-between">
             <span>{t('loanAmountLabel')}</span>
@@ -104,7 +104,7 @@ export default function AdvancedSimulation() {
         </div>
       </div>
       {totalDue && (
-        <div className="bg-indigo-soft p-3 rounded-1 fw-semibold">
+        <div className="bg-secondary-soft p-3 rounded-1 fw-semibold">
           {t('totalPayment', { total: format(totalDue) })}
         </div>
       )}
