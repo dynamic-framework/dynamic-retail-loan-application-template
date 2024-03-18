@@ -23,7 +23,7 @@ export default function StatusRejected() {
           components={{ bold: <span className="fs-4 text-dark fw-bold" /> }}
         />
       </h5>
-      <div className="d-flex align-items-center gap-4 bg-white rounded-1 px-4 py-3 mb-3 shadow-sm">
+      <div className="d-flex align-items-center gap-4 bg-white rounded-1 px-6 py-4 mb-4 shadow-sm">
         <DIcon icon="chat" size="24px" theme="secondary" />
         <p>{t('status.rejected.message')}</p>
       </div>
