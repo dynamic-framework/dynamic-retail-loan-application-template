@@ -26,8 +26,8 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
           {t('modal.header')}
         </h5>
       </DModalHeader>
-      <DModalBody>
-        <div className="bg-indigo-soft rounded-1 p-3 mx-3 mb-3">
+      <DModalBody className="pt-0">
+        <div className="bg-secondary-soft rounded-1 p-3">
           <p>{t('modal.body')}</p>
         </div>
       </DModalBody>
