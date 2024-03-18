@@ -25,7 +25,7 @@ export default function StatusRejected() {
       </h5>
       <div className="d-flex align-items-center gap-4 bg-white rounded-1 px-6 py-4 mb-4 shadow-sm">
         <DIcon icon="chat" size="24px" theme="secondary" />
-        <p>{t('status.rejected.message')}</p>
+        <p className="mb-0">{t('status.rejected.message')}</p>
       </div>
       <DButton
         onClick={() => goToPath('DASHBOARD')}

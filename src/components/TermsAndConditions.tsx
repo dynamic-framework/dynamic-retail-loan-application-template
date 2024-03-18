@@ -25,7 +25,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
       </DOffcanvasHeader>
       <DOffcanvasBody>
         <div className="d-flex flex-column gap-6">
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
             eum ut in deserunt quae, eius veritatis quidem quibusdam illo aspernatur.
@@ -37,7 +37,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
             Perspiciatis culpa nam beatae, a exercitationem explicabo totam nostrum
             provident doloribus.
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
             eum ut in deserunt quae, eius veritatis quidem quibusdam illo aspernatur.
@@ -49,7 +49,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
             Perspiciatis culpa nam beatae, a exercitationem explicabo totam nostrum
             provident doloribus.
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
             eum ut in deserunt quae, eius veritatis quidem quibusdam illo aspernatur.
@@ -61,19 +61,19 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
             Perspiciatis culpa nam beatae, a exercitationem explicabo totam nostrum
             provident doloribus.
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Molestiae illo
             illum odit nihil vel recusandae maiores error n
             ostrum cupiditate consectetur!
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Molestiae illo
             illum odit nihil vel recusandae maiores error n
             ostrum cupiditate consectetur!
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
             eum ut in deserunt quae, eius veritatis quidem quibusdam illo aspernatur.
@@ -85,7 +85,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
             Perspiciatis culpa nam beatae, a exercitationem explicabo totam nostrum
             provident doloribus.
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Molestiae illo
             illum odit nihil vel recusandae maiores error n

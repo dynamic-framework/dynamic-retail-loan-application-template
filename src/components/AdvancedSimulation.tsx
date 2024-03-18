@@ -36,7 +36,7 @@ export default function AdvancedSimulation() {
     <div className="d-flex flex-column gap-4">
       <h2 className="fw-bold fs-6">{t('conditions')}</h2>
       <div className="bg-gray-200 text-center p-4 rounded-1 d-flex gap-4 flex-column">
-        <p>{t('yourPayment')}</p>
+        <p className="mb-0">{t('yourPayment')}</p>
         <DCurrencyText value={monthlyPayment} className="fs-3 fw-bold" />
       </div>
       <div className="bg-secondary-soft p-4 rounded-1 d-flex flex-column gap-2">
