@@ -21,11 +21,11 @@ export default function App() {
   }, [setContext]);
 
   return (
-    <div className="container py-3">
+    <div className="container py-4">
       {loading
         ? <SkeletonLoader />
         : (
-          <div className="row justify-content-center my-3">
+          <div className="row justify-content-center my-4">
             {status
               ? <ApplicationStatus status={status} />
               : (

@@ -33,13 +33,13 @@ export default function AdvancedSimulation() {
   const { format } = useFormatCurrency();
 
   return (
-    <div className="d-flex flex-column gap-3">
+    <div className="d-flex flex-column gap-4">
       <h2 className="fw-bold fs-6">{t('conditions')}</h2>
-      <div className="bg-gray-200 text-center p-3 rounded-1 d-flex gap-3 flex-column">
-        <p>{t('yourPayment')}</p>
+      <div className="bg-gray-200 text-center p-4 rounded-1 d-flex gap-4 flex-column">
+        <p className="mb-0">{t('yourPayment')}</p>
         <DCurrencyText value={monthlyPayment} className="fs-3 fw-bold" />
       </div>
-      <div className="bg-secondary-soft p-3 rounded-1 d-flex flex-column gap-2">
+      <div className="bg-secondary-soft p-4 rounded-1 d-flex flex-column gap-2">
         {amount && (
           <div className="d-flex justify-content-between">
             <span>{t('loanAmountLabel')}</span>
@@ -104,7 +104,7 @@ export default function AdvancedSimulation() {
         </div>
       </div>
       {totalDue && (
-        <div className="bg-secondary-soft p-3 rounded-1 fw-semibold">
+        <div className="bg-secondary-soft p-4 rounded-1 fw-semibold">
           {t('totalPayment', { total: format(totalDue) })}
         </div>
       )}
@@ -130,14 +130,13 @@ export default function AdvancedSimulation() {
           }}
         />
       </span>
-      <div className="row py-3">
-        <div className="col-12 col-lg-6 mb-3 mb-lg-0">
+      <div className="row py-4">
+        <div className="col-12 col-lg-6 mb-4 mb-lg-0">
           <DButton
             text={t('actions.decline')}
             className="w-100"
             variant="outline"
             theme="secondary"
-            pill
             onClick={() => openModal('declineOffer', undefined)}
           />
         </div>
@@ -145,7 +144,6 @@ export default function AdvancedSimulation() {
           <DButton
             text={t('actions.accept')}
             className="w-100"
-            pill
             loading={loading}
             onClick={applyLoan}
           />

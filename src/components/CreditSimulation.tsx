@@ -56,7 +56,7 @@ export default function CreditSimulation() {
   };
 
   return (
-    <div className="bg-white shadow-sm p-3 rounded d-flex flex-column gap-3">
+    <div className="bg-white shadow-sm p-4 rounded d-flex flex-column gap-4">
       <DInputCurrency
         label={t('simulation.value')}
         id="creditAmount"
@@ -80,7 +80,6 @@ export default function CreditSimulation() {
           <DButton
             text={t('recalculate')}
             loading={loading}
-            pill
             onClick={simulate}
           />
         </div>
@@ -92,7 +91,6 @@ export default function CreditSimulation() {
           <DButton
             theme="primary"
             text={t('simulate')}
-            pill
             loading={loading}
             onClick={simulate}
             {...(request.amount && !loading) && {
