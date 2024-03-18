@@ -137,7 +137,6 @@ export default function AdvancedSimulation() {
             className="w-100"
             variant="outline"
             theme="secondary"
-            pill
             onClick={() => openModal('declineOffer', undefined)}
           />
         </div>
@@ -145,7 +144,6 @@ export default function AdvancedSimulation() {
           <DButton
             text={t('actions.accept')}
             className="w-100"
-            pill
             loading={loading}
             onClick={applyLoan}
           />

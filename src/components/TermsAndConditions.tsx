@@ -99,7 +99,6 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
       >
         <DButton
           text={t('agree')}
-          pill
           onClick={() => closeOffcanvas()}
         />
       </DOffcanvasFooter>

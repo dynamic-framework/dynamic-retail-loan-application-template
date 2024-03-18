@@ -36,12 +36,10 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
           text={t('modal.keepOffer')}
           variant="outline"
           theme="secondary"
-          pill
           onClick={() => closeModal()}
         />
         <DButton
           text={t('modal.declineOffer')}
-          pill
           onClick={() => {
             dispatch(setStatus('rejected'));
             closeModal();

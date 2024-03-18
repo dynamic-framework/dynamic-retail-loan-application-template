@@ -30,7 +30,6 @@ export default function StatusPending() {
       <DButton
         onClick={goToHome}
         text={t('status.pending.button')}
-        pill
       />
     </div>
   );
