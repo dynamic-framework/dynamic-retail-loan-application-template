@@ -56,7 +56,7 @@ export default function CreditSimulation() {
   };
 
   return (
-    <div className="bg-white shadow-sm p-3 rounded d-flex flex-column gap-3">
+    <div className="bg-white shadow-sm p-3 rounded d-flex flex-column gap-4">
       <DInputCurrency
         label={t('simulation.value')}
         id="creditAmount"

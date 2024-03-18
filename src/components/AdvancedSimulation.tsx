@@ -33,9 +33,9 @@ export default function AdvancedSimulation() {
   const { format } = useFormatCurrency();
 
   return (
-    <div className="d-flex flex-column gap-3">
+    <div className="d-flex flex-column gap-4">
       <h2 className="fw-bold fs-6">{t('conditions')}</h2>
-      <div className="bg-gray-200 text-center p-3 rounded-1 d-flex gap-3 flex-column">
+      <div className="bg-gray-200 text-center p-3 rounded-1 d-flex gap-4 flex-column">
         <p>{t('yourPayment')}</p>
         <DCurrencyText value={monthlyPayment} className="fs-3 fw-bold" />
       </div>

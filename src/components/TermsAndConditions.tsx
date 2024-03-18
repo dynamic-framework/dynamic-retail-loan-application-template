@@ -24,7 +24,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
         <h4 className="fw-bold">{t('termsAndConditions')}</h4>
       </DOffcanvasHeader>
       <DOffcanvasBody>
-        <div className="d-flex flex-column gap-4">
+        <div className="d-flex flex-column gap-6">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
