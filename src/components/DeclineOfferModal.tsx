@@ -27,8 +27,8 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
         </h5>
       </DModalHeader>
       <DModalBody className="pt-0">
-        <div className="bg-secondary-soft rounded-1 p-3">
-          <p>{t('modal.body')}</p>
+        <div className="bg-secondary-soft rounded-1 p-4">
+          <p className="mb-0">{t('modal.body')}</p>
         </div>
       </DModalBody>
       <DModalFooter>
@@ -36,12 +36,10 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
           text={t('modal.keepOffer')}
           variant="outline"
           theme="secondary"
-          pill
           onClick={() => closeModal()}
         />
         <DButton
           text={t('modal.declineOffer')}
-          pill
           onClick={() => {
             dispatch(setStatus('rejected'));
             closeModal();
