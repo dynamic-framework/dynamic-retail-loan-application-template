@@ -3,15 +3,15 @@ import {
   DModal,
   DModalBody,
   DModalFooter,
-  DModalHeader,
-  ModalProps,
+  DModalHeader, useDPortalContext,
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../store/hooks';
 import { setStatus } from '../store/slice';
 
-export default function DeclineOfferModal({ closeModal }: ModalProps) {
+export default function DeclineOfferModal() {
   const dispatch = useAppDispatch();
+  const { closePortal } = useDPortalContext();
   const { t } = useTranslation();
   return (
     <DModal
@@ -20,7 +20,7 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
       staticBackdrop
     >
       <DModalHeader
-        onClose={() => closeModal()}
+        onClose={closePortal}
       >
         <h5 className="fw-semibold">
           {t('modal.header')}
@@ -36,13 +36,13 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
           text={t('modal.keepOffer')}
           variant="outline"
           theme="secondary"
-          onClick={() => closeModal()}
+          onClick={closePortal}
         />
         <DButton
           text={t('modal.declineOffer')}
           onClick={() => {
             dispatch(setStatus('rejected'));
-            closeModal();
+            closePortal();
           }}
         />
       </DModalFooter>

@@ -2,11 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import {
-  DContextProvider,
-  DModalContextProvider,
-  DOffcanvasContextProvider,
-} from '@dynamic-framework/ui-react';
+import { DContextProvider } from '@dynamic-framework/ui-react';
 
 import './config/liquidConfig';
 import './config/i18nConfig';
@@ -15,7 +11,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store/store';
 import DeclineOfferModal from './components/DeclineOfferModal';
-import TermsAndConditions from './components/TermsAndConditions';
+import TermsAndConditionsOffcanvas from './components/TermsAndConditionsOffcanvas';
 
 import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import './styles/base.scss';
@@ -23,25 +19,17 @@ import './styles/base.scss';
 const root = ReactDOM.createRoot(document.getElementById('loanApplicationTemplate') as Element);
 root.render(
   <React.StrictMode>
-    <DContextProvider>
-      <Provider store={store}>
-        <DOffcanvasContextProvider
-          portalName="offcanvasPortal"
-          availableOffcanvas={{
-            termsAndConditions: TermsAndConditions,
-          }}
-        >
-          <DModalContextProvider
-            portalName="modalPortal"
-            availableModals={{
-              declineOffer: DeclineOfferModal,
-            }}
-          >
-            <App />
-          </DModalContextProvider>
-        </DOffcanvasContextProvider>
-      </Provider>
-    </DContextProvider>
+    <Provider store={store}>
+      <DContextProvider
+        portalName="portal"
+        availablePortals={{
+          termsAndConditionsOffcanvas: TermsAndConditionsOffcanvas,
+          declineOfferModal: DeclineOfferModal,
+        }}
+      >
+        <App />
+      </DContextProvider>
+    </Provider>
   </React.StrictMode>,
 );
 
