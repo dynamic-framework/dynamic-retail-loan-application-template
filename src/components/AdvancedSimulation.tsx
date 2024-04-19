@@ -119,7 +119,7 @@ export default function AdvancedSimulation() {
             />,
             2: <span
               className="text-secondary text-decoration-underline"
-              onClick={() => openPortal('termsAndConditionsOffcanvas', undefined)}
+              onClick={() => openPortal('offcanvasTermsAndConditions', undefined)}
               onKeyDown={() => {}}
               role="button"
               tabIndex={0}
@@ -135,7 +135,7 @@ export default function AdvancedSimulation() {
             className="w-100"
             variant="outline"
             theme="secondary"
-            onClick={() => openPortal('declineOfferModal', undefined)}
+            onClick={() => openPortal('modalDeclineOffer', undefined)}
           />
         </div>
         <div className="col-12 col-lg-6">

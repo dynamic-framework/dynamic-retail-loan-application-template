@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../store/hooks';
 import { setStatus } from '../store/slice';
 
-export default function DeclineOfferModal() {
+export default function ModalDeclineOffer() {
   const dispatch = useAppDispatch();
   const { closePortal } = useDPortalContext();
   const { t } = useTranslation();
