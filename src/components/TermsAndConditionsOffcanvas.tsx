@@ -1,15 +1,16 @@
 import {
-  OffcanvasProps,
   DOffcanvas,
   DButton,
   DOffcanvasHeader,
   DOffcanvasBody,
   DOffcanvasFooter,
+  useDPortalContext,
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
-export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
+export default function TermsAndConditionsOffcanvas() {
   const { t } = useTranslation();
+  const { closePortal } = useDPortalContext();
 
   return (
     <DOffcanvas
@@ -19,13 +20,13 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
     >
       <DOffcanvasHeader
         showCloseButton
-        onClose={() => closeOffcanvas()}
+        onClose={closePortal}
       >
         <h4 className="fw-bold">{t('termsAndConditions')}</h4>
       </DOffcanvasHeader>
       <DOffcanvasBody>
-        <div className="d-flex flex-column gap-4">
-          <p>
+        <div className="d-flex flex-column gap-6">
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
             eum ut in deserunt quae, eius veritatis quidem quibusdam illo aspernatur.
@@ -37,7 +38,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
             Perspiciatis culpa nam beatae, a exercitationem explicabo totam nostrum
             provident doloribus.
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
             eum ut in deserunt quae, eius veritatis quidem quibusdam illo aspernatur.
@@ -49,7 +50,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
             Perspiciatis culpa nam beatae, a exercitationem explicabo totam nostrum
             provident doloribus.
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
             eum ut in deserunt quae, eius veritatis quidem quibusdam illo aspernatur.
@@ -61,19 +62,19 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
             Perspiciatis culpa nam beatae, a exercitationem explicabo totam nostrum
             provident doloribus.
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Molestiae illo
             illum odit nihil vel recusandae maiores error n
             ostrum cupiditate consectetur!
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Molestiae illo
             illum odit nihil vel recusandae maiores error n
             ostrum cupiditate consectetur!
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Blanditiis esse dolores debitis laudantium omnis non assumenda,
             eum ut in deserunt quae, eius veritatis quidem quibusdam illo aspernatur.
@@ -85,7 +86,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
             Perspiciatis culpa nam beatae, a exercitationem explicabo totam nostrum
             provident doloribus.
           </p>
-          <p>
+          <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Molestiae illo
             illum odit nihil vel recusandae maiores error n
@@ -99,8 +100,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
       >
         <DButton
           text={t('agree')}
-          isPill
-          onClick={() => closeOffcanvas()}
+          onClick={closePortal}
         />
       </DOffcanvasFooter>
     </DOffcanvas>

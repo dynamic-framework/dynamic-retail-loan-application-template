@@ -4,31 +4,32 @@ import {
   DModalBody,
   DModalFooter,
   DModalHeader,
-  ModalProps,
+  useDPortalContext,
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../store/hooks';
 import { setStatus } from '../store/slice';
 
-export default function DeclineOfferModal({ closeModal }: ModalProps) {
+export default function DeclineOfferModal() {
   const dispatch = useAppDispatch();
+  const { closePortal } = useDPortalContext();
   const { t } = useTranslation();
   return (
     <DModal
       name="declineOffer"
-      isCentered
-      isStatic
+      centered
+      staticBackdrop
     >
       <DModalHeader
-        onClose={() => closeModal()}
+        onClose={closePortal}
       >
         <h5 className="fw-semibold">
           {t('modal.header')}
         </h5>
       </DModalHeader>
-      <DModalBody>
-        <div className="bg-indigo-soft rounded-1 p-3 mx-3 mb-3">
-          <p>{t('modal.body')}</p>
+      <DModalBody className="pt-0">
+        <div className="bg-secondary-soft rounded-1 p-4">
+          <p className="mb-0">{t('modal.body')}</p>
         </div>
       </DModalBody>
       <DModalFooter>
@@ -36,15 +37,13 @@ export default function DeclineOfferModal({ closeModal }: ModalProps) {
           text={t('modal.keepOffer')}
           variant="outline"
           theme="secondary"
-          isPill
-          onClick={() => closeModal()}
+          onClick={closePortal}
         />
         <DButton
           text={t('modal.declineOffer')}
-          isPill
           onClick={() => {
             dispatch(setStatus('rejected'));
-            closeModal();
+            closePortal();
           }}
         />
       </DModalFooter>

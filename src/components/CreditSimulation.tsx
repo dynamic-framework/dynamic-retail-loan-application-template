@@ -6,7 +6,7 @@ import {
   DInputCurrency,
   useFormatCurrency,
 } from '@dynamic-framework/ui-react';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import {
@@ -51,12 +51,13 @@ export default function CreditSimulation() {
     ),
     [request.amount, request.installment, simulation?.installments.count, simulation?.total],
   );
-  const setInstallment = (installment: number) => {
+
+  const setInstallment = useCallback((installment: number) => {
     dispatch(setRequestedInstallment(installment));
-  };
+  }, [dispatch]);
 
   return (
-    <div className="bg-white shadow-sm p-3 rounded d-flex flex-column gap-3">
+    <div className="bg-white shadow-sm p-4 rounded d-flex flex-column gap-4">
       <DInputCurrency
         label={t('simulation.value')}
         id="creditAmount"
@@ -79,8 +80,7 @@ export default function CreditSimulation() {
         <div className="mx-auto">
           <DButton
             text={t('recalculate')}
-            isLoading={loading}
-            isPill
+            loading={loading}
             onClick={simulate}
           />
         </div>
@@ -92,8 +92,7 @@ export default function CreditSimulation() {
           <DButton
             theme="primary"
             text={t('simulate')}
-            isPill
-            isLoading={loading}
+            loading={loading}
             onClick={simulate}
             {...(request.amount && !loading) && {
               iconEnd: 'check',
