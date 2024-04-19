@@ -1,15 +1,16 @@
 import {
-  OffcanvasProps,
   DOffcanvas,
   DButton,
   DOffcanvasHeader,
   DOffcanvasBody,
   DOffcanvasFooter,
+  useDPortalContext,
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
-export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
+export default function TermsAndConditionsOffcanvas() {
   const { t } = useTranslation();
+  const { closePortal } = useDPortalContext();
 
   return (
     <DOffcanvas
@@ -19,7 +20,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
     >
       <DOffcanvasHeader
         showCloseButton
-        onClose={() => closeOffcanvas()}
+        onClose={closePortal}
       >
         <h4 className="fw-bold">{t('termsAndConditions')}</h4>
       </DOffcanvasHeader>
@@ -99,7 +100,7 @@ export default function TermsAndConditions({ closeOffcanvas }: OffcanvasProps) {
       >
         <DButton
           text={t('agree')}
-          onClick={() => closeOffcanvas()}
+          onClick={closePortal}
         />
       </DOffcanvasFooter>
     </DOffcanvas>

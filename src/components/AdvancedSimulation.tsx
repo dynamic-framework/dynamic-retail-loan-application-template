@@ -3,8 +3,7 @@ import {
   DButton,
   DCurrencyText,
   DIcon,
-  useDOffcanvasContext,
-  useDModalContext,
+  useDPortalContext,
   useFormatCurrency,
   DTooltip,
 } from '@dynamic-framework/ui-react';
@@ -27,8 +26,7 @@ export default function AdvancedSimulation() {
     interestRate,
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   } = simulation!;
-  const { openModal } = useDModalContext();
-  const { openOffcanvas } = useDOffcanvasContext();
+  const { openPortal } = useDPortalContext();
   const { t } = useTranslation();
   const { format } = useFormatCurrency();
 
@@ -121,7 +119,7 @@ export default function AdvancedSimulation() {
             />,
             2: <span
               className="text-secondary text-decoration-underline"
-              onClick={() => openOffcanvas('termsAndConditions', undefined)}
+              onClick={() => openPortal('termsAndConditionsOffcanvas', undefined)}
               onKeyDown={() => {}}
               role="button"
               tabIndex={0}
@@ -137,7 +135,7 @@ export default function AdvancedSimulation() {
             className="w-100"
             variant="outline"
             theme="secondary"
-            onClick={() => openModal('declineOffer', undefined)}
+            onClick={() => openPortal('declineOfferModal', undefined)}
           />
         </div>
         <div className="col-12 col-lg-6">
