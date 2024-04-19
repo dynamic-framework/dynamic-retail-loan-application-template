@@ -3,7 +3,8 @@ import {
   DModal,
   DModalBody,
   DModalFooter,
-  DModalHeader, useDPortalContext,
+  DModalHeader,
+  useDPortalContext,
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../store/hooks';
