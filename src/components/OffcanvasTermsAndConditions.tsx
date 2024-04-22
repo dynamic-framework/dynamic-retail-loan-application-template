@@ -8,7 +8,7 @@ import {
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
-export default function TermsAndConditionsOffcanvas() {
+export default function OffcanvasTermsAndConditions() {
   const { t } = useTranslation();
   const { closePortal } = useDPortalContext();
 

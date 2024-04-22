@@ -10,8 +10,8 @@ import './config/i18nConfig';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store/store';
-import DeclineOfferModal from './components/DeclineOfferModal';
-import TermsAndConditionsOffcanvas from './components/TermsAndConditionsOffcanvas';
+import ModalDeclineOffer from './components/ModalDeclineOffer';
+import OffcanvasTermsAndConditions from './components/OffcanvasTermsAndConditions';
 
 import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import './styles/base.scss';
@@ -23,8 +23,8 @@ root.render(
       <DContextProvider
         portalName="portal"
         availablePortals={{
-          termsAndConditionsOffcanvas: TermsAndConditionsOffcanvas,
-          declineOfferModal: DeclineOfferModal,
+          offcanvasTermsAndConditions: OffcanvasTermsAndConditions,
+          modalDeclineOffer: ModalDeclineOffer,
         }}
       >
         <App />
