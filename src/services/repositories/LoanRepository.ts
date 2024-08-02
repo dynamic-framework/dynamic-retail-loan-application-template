@@ -1,9 +1,9 @@
 import type { GenericAbortSignal } from 'axios';
 
-import ApiClient from '../clients/apiClient';
 import {
   ApiLoanApply, ApiLoanOffer, ApiLoanOffers, ApiLoanSimulation,
 } from '../api-interface';
+import ApiClient from '../clients/apiClient';
 import { loanRequestMapper, loanSimulationMapper } from '../mappers/loanMapper';
 
 export async function listOffers(userId: string, config: { abortSignal: GenericAbortSignal }) {

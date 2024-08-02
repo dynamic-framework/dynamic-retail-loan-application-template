@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+
+import { USER_ID } from '../../config/widgetConfig';
 import { useAppDispatch } from '../../store/hooks';
-import { LoanRepository } from '../repositories';
 import { setOffer, setRequestedInstallment } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
-import { USER_ID } from '../../config/widgetConfig';
+import { LoanRepository } from '../repositories';
 
 export default function useLoanRequestEffect() {
   const [loading, setLoading] = useState(false);

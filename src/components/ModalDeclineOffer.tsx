@@ -7,6 +7,7 @@ import {
   useDPortalContext,
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
+
 import { useAppDispatch } from '../store/hooks';
 import { setStatus } from '../store/slice';
 

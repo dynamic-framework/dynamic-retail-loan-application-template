@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useCallback, useState } from 'react';
+
+import { USER_ID } from '../../config/widgetConfig';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getSimulationResult } from '../../store/selectors';
-import errorHandler from '../../utils/errorHandler';
 import { setStatus } from '../../store/slice';
+import errorHandler from '../../utils/errorHandler';
 import { LoanRepository } from '../repositories';
-import { USER_ID } from '../../config/widgetConfig';
 
 export default function useApplyLoan() {
   const [loading, setLoading] = useState(false);

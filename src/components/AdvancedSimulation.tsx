@@ -9,9 +9,9 @@ import {
 } from '@dynamic-framework/ui-react';
 import { Trans, useTranslation } from 'react-i18next';
 
+import useApplyLoan from '../services/hooks/useApplyLoan';
 import { useAppSelector } from '../store/hooks';
 import { getSimulationResult } from '../store/selectors';
-import useApplyLoan from '../services/hooks/useApplyLoan';
 
 export default function AdvancedSimulation() {
   const { loading, callback: applyLoan } = useApplyLoan();
