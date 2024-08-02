@@ -5,6 +5,7 @@ import { useAppDispatch } from '../../store/hooks';
 import { setOffer, setRequestedInstallment } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 import { LoanRepository } from '../repositories';
+import ApiError from '../utils/ApiError';
 
 export default function useLoanRequestEffect() {
   const [loading, setLoading] = useState(false);
@@ -24,6 +25,8 @@ export default function useLoanRequestEffect() {
         dispatch(setRequestedInstallment(offer.installments.minimum));
         setLoading(false);
       } catch (error) {
+        if ((error as ApiError).name === 'CanceledError') return;
+
         errorHandler(error);
       }
     })();
