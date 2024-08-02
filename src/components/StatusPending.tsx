@@ -1,5 +1,6 @@
 import { DAlert, DButton } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
+
 import WidgetUtils from '../utils/widgetUtils';
 
 export default function StatusPending() {

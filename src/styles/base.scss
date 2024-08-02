@@ -1,5 +1,8 @@
 @import "@dynamic-framework/ui-react/src/style/abstracts/+import";
 
-.offcanvas-terms .offcanvas {
-  --#{$prefix}offcanvas-width: 50%;
+.loan-application-template,
+.d-portal {
+  .offcanvas-terms .offcanvas {
+    --#{$prefix}offcanvas-width: 50%;
+  }
 }

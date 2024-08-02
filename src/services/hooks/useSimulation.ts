@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
+
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getOffer, getUserRequest } from '../../store/selectors';
-import { LoanRepository } from '../repositories';
 import { setSimulation } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { LoanRepository } from '../repositories';
 
 export default function useSimulation() {
   const [loading, setLoading] = useState(false);

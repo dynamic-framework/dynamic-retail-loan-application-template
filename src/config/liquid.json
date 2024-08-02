@@ -8,8 +8,7 @@
     "url": "https://un.modyo.cloud"
   },
   "user": {
-    "access_token": null,
-    "id": "8a44b7ff83f315110183f618ff2d0473"
+    "access_token": null
   },
   "vars": {
     "currency-symbol": "$",
@@ -17,6 +16,7 @@
     "currency-separator": ".",
     "currency-decimal": ",",
     "dashboard-path": "#",
-    "api-path": "https://stoplight.io/mocks/modyo/dynamic/204091081"
+    "api-path": "https://stoplight.io/mocks/modyo/dynamic/204091081",
+    "user-id": "8a44b7ff83f315110183f618ff2d0473"
   }
 }
