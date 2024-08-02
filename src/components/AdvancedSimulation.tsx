@@ -33,7 +33,7 @@ export default function AdvancedSimulation() {
   return (
     <div className="d-flex flex-column gap-4">
       <h2 className="fw-bold fs-6">{t('conditions')}</h2>
-      <div className="bg-gray-200 text-center p-4 rounded-1 d-flex gap-4 flex-column">
+      <div className="bg-secondary-50 text-center p-4 rounded-1 d-flex gap-4 flex-column">
         <p className="mb-0">{t('yourPayment')}</p>
         <DCurrencyText value={monthlyPayment} className="fs-3 fw-bold" />
       </div>
@@ -56,15 +56,15 @@ export default function AdvancedSimulation() {
           <span className="d-flex align-items-center gap-2">
             {t('annualInterestRate')}
             <DTooltip
-              className="border-0 p-2 cursor-help"
+              className="border-0"
               placement="top"
-              padding={16}
-              offSet={5}
+              theme="secondary"
               Component={(
                 <DIcon
                   icon="question-circle"
                   theme="secondary"
                   size="1rem"
+                  className="cursor-help"
                 />
               )}
             >
@@ -80,15 +80,17 @@ export default function AdvancedSimulation() {
           <span className="d-flex align-items-center gap-2">
             {t('monthlyInterestRate')}
             <DTooltip
-              className="border-0 p-2 cursor-help"
+              className="border-0"
               placement="top"
               padding={16}
               offSet={5}
+              theme="secondary"
               Component={(
                 <DIcon
                   icon="question-circle"
                   theme="secondary"
                   size="1rem"
+                  className="cursor-help"
                 />
               )}
             >
