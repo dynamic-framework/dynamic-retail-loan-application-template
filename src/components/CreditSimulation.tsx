@@ -8,6 +8,8 @@ import {
 } from '@dynamic-framework/ui-react';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import useSimulation from '../services/hooks/useSimulation';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import {
   getOffer,
@@ -18,8 +20,8 @@ import {
   setRequestedAmount,
   setRequestedInstallment,
 } from '../store/slice';
+
 import AdvancedSimulation from './AdvancedSimulation';
-import useSimulation from '../services/hooks/useSimulation';
 
 export default function CreditSimulation() {
   const dispatch = useAppDispatch();

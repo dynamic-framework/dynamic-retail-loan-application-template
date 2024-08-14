@@ -1,17 +1,16 @@
+import { DContextProvider } from '@dynamic-framework/ui-react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-
-import { DContextProvider } from '@dynamic-framework/ui-react';
 
 import './config/liquidConfig';
 import './config/i18nConfig';
 
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import store from './store/store';
 import ModalDeclineOffer from './components/ModalDeclineOffer';
 import OffcanvasTermsAndConditions from './components/OffcanvasTermsAndConditions';
+import reportWebVitals from './reportWebVitals';
+import store from './store/store';
 
 import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import './styles/base.scss';

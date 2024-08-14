@@ -1,5 +1,6 @@
 import { DButton, DIcon } from '@dynamic-framework/ui-react';
 import { Trans, useTranslation } from 'react-i18next';
+
 import WidgetUtils from '../utils/widgetUtils';
 
 export default function StatusRejected() {
