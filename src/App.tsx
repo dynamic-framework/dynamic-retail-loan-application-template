@@ -1,9 +1,9 @@
 import { useDContext } from '@dynamic-framework/ui-react';
 import { useEffect } from 'react';
 
+import ApplicationLoader from './components/ApplicationLoader';
 import ApplicationStatus from './components/ApplicationStatus';
 import CreditSimulation from './components/CreditSimulation';
-import SkeletonLoader from './components/SkeletonLoader';
 import { SITE_LANG, VARS_CURRENCY } from './config/widgetConfig';
 import useLoanRequestEffect from './services/hooks/useLoanRequestEffect';
 import { useAppSelector } from './store/hooks';
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <div className="container py-4">
       {loading
-        ? <SkeletonLoader />
+        ? <ApplicationLoader />
         : (
           <div className="row justify-content-center my-4">
             {status
