@@ -106,7 +106,7 @@ export default function AdvancedSimulation() {
             </DTooltip>
           </span>
           <span>
-            {interestRate.monthly}
+            {interestRate.monthly.toFixed(2)}
             %
           </span>
         </div>

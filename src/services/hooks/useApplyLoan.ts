@@ -12,26 +12,24 @@ export default function useApplyLoan() {
   const [loading, setLoading] = useState(false);
   const dispatch = useAppDispatch();
 
-  const simulation = useAppSelector(getSimulationResult);
-  const abortController = new AbortController();
   const {
     accountId,
     amount,
     installments,
-  } = simulation!;
+  } = useAppSelector(getSimulationResult)!;
+  const abortController = new AbortController();
 
   const callback = useCallback(
     async () => {
       try {
         setLoading(true);
-        await LoanRepository.applyOffer(
-          USER_ID,
+        await LoanRepository.applyOffer({
+          userId: USER_ID,
           accountId,
-          installments.count,
+          installments: installments.count,
           amount,
-          { abortSignal: abortController.signal },
-
-        );
+          config: { abortSignal: abortController.signal },
+        });
         dispatch(setStatus('pending'));
         window.prepareNotification?.('123');
         setLoading(false);
@@ -40,7 +38,13 @@ export default function useApplyLoan() {
         errorHandler(error);
       }
     },
-    [accountId, installments.count, amount, abortController.signal, dispatch],
+    [
+      accountId,
+      installments.count,
+      amount,
+      abortController.signal,
+      dispatch,
+    ],
   );
 
   return {
