@@ -15,7 +15,7 @@
     }
   },
   "simulation": {
-    "value": "Valor",
+    "value": "Monto",
     "limitAmount": "Desde {min} hasta {max}",
     "installments": "Cuotas",
     "installmentsRange": "Ingrese un número entre {min} y {max}"
