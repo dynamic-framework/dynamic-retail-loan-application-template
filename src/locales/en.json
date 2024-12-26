@@ -15,7 +15,7 @@
     }
   },
   "simulation": {
-    "value": "Value",
+    "value": "Amount",
     "limitAmount": "From {min} to {max}",
     "installments": "Installments",
     "installmentsRange": "Enter a number between {min} and {max}"
