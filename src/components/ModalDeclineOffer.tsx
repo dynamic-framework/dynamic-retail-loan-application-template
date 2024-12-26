@@ -1,9 +1,6 @@
 import {
   DButton,
   DModal,
-  DModalBody,
-  DModalFooter,
-  DModalHeader,
   useDPortalContext,
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
@@ -21,23 +18,22 @@ export default function ModalDeclineOffer() {
       centered
       staticBackdrop
     >
-      <DModalHeader
+      <DModal.Header
         onClose={closePortal}
       >
         <h5 className="fw-semibold">
           {t('modal.header')}
         </h5>
-      </DModalHeader>
-      <DModalBody className="pt-0">
+      </DModal.Header>
+      <DModal.Body>
         <div className="bg-secondary-soft rounded-1 p-4">
           <p className="mb-0">{t('modal.body')}</p>
         </div>
-      </DModalBody>
-      <DModalFooter>
+      </DModal.Body>
+      <DModal.Footer actionPlacement="fill">
         <DButton
           text={t('modal.keepOffer')}
           variant="outline"
-          theme="secondary"
           onClick={closePortal}
         />
         <DButton
@@ -47,7 +43,7 @@ export default function ModalDeclineOffer() {
             closePortal();
           }}
         />
-      </DModalFooter>
+      </DModal.Footer>
     </DModal>
   );
 }

@@ -15,7 +15,6 @@ import { getSimulationResult } from '../store/selectors';
 
 export default function AdvancedSimulation() {
   const { loading, callback: applyLoan } = useApplyLoan();
-  const simulation = useAppSelector(getSimulationResult);
   const {
     amount,
     total: totalDue,
@@ -24,8 +23,8 @@ export default function AdvancedSimulation() {
       amount: monthlyPayment,
     },
     interestRate,
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  } = simulation!;
+  } = useAppSelector(getSimulationResult)!;
+
   const { openPortal } = useDPortalContext();
   const { t } = useTranslation();
   const { format } = useFormatCurrency();
@@ -35,13 +34,19 @@ export default function AdvancedSimulation() {
       <h2 className="fw-bold fs-6">{t('conditions')}</h2>
       <div className="bg-secondary-50 text-center p-4 rounded-1 d-flex gap-4 flex-column">
         <p className="mb-0">{t('yourPayment')}</p>
-        <DCurrencyText value={monthlyPayment} className="fs-3 fw-bold" />
+        <DCurrencyText
+          value={monthlyPayment}
+          className="fs-3 fw-bold"
+        />
       </div>
       <div className="bg-secondary-soft p-4 rounded-1 d-flex flex-column gap-2">
         {amount && (
           <div className="d-flex justify-content-between">
             <span>{t('loanAmountLabel')}</span>
-            <DCurrencyText value={amount} className="fw-bold" />
+            <DCurrencyText
+              value={amount}
+              className="fw-bold"
+            />
           </div>
         )}
         <div className="d-flex justify-content-between">
@@ -50,7 +55,10 @@ export default function AdvancedSimulation() {
         </div>
         <div className="d-flex justify-content-between">
           <span>{t('monthlyInstallments')}</span>
-          <DCurrencyText value={monthlyPayment ?? 0} className="fw-bold" />
+          <DCurrencyText
+            value={monthlyPayment ?? 0}
+            className="fw-bold"
+          />
         </div>
         <div className="d-flex justify-content-between">
           <span className="d-flex align-items-center gap-2">
@@ -122,7 +130,7 @@ export default function AdvancedSimulation() {
             2: <span
               className="text-secondary text-decoration-underline"
               onClick={() => openPortal('offcanvasTermsAndConditions', undefined)}
-              onKeyDown={() => {}}
+              onKeyDown={() => { }}
               role="button"
               tabIndex={0}
               aria-label="Term and conditions"
