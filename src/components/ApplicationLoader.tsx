@@ -1,20 +1,20 @@
 export default function ApplicationLoader() {
   return (
-    <div className="d-flex flex-column align-items-center mt-6 gap-6 placeholder-glow">
+    <div className="d-flex flex-column align-items-center gap-6 placeholder-glow">
       <span
-        className="placeholder bg-secondary-200 rounded-2 col-12 col-md-6 mb-5"
+        className="placeholder bg-secondary-200 rounded-2 col-12"
         style={{
-          height: '5rem',
+          height: '6rem',
         }}
       />
       <span
-        className="placeholder bg-secondary-200 rounded-2 col-12 col-md-6 mb-3"
+        className="placeholder bg-secondary-200 rounded-2 col-12"
         style={{
-          height: '5rem',
+          height: '6rem',
         }}
       />
       <span
-        className="placeholder bg-secondary-200 rounded-4 col-4 col-md-1"
+        className="placeholder bg-secondary-200 rounded-4 col-4"
         style={{
           height: '3rem',
         }}

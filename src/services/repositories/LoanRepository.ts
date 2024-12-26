@@ -1,61 +1,67 @@
-import type { GenericAbortSignal } from 'axios';
-
 import {
-  ApiLoanApply, ApiLoanOffer, ApiLoanOffers, ApiLoanSimulation,
+  ApiLoanApply,
+  ApiLoanOffer,
+  ApiLoanSimulation,
+  ApiResponseWrapped,
 } from '../api-interface';
 import ApiClient from '../clients/apiClient';
 import { loanRequestMapper, loanSimulationMapper } from '../mappers/loanMapper';
 
-export async function listOffers(userId: string, config: { abortSignal: GenericAbortSignal }) {
-  const { data } = await ApiClient.request<ApiLoanOffers>({
-    url: '/account/loan/offers',
+import { RepositoryParams } from './repository';
+
+export async function listOffer(
+  params: RepositoryParams<{
+    userId: string,
+  }>,
+) {
+  const { data } = await ApiClient.request<ApiResponseWrapped<ApiLoanOffer>>({
+    url: '/loan-offers/LOAN/LOAN',
     method: 'GET',
-    signal: config.abortSignal,
-    params: { user_id: userId },
-    headers: {
-      Prefer: 'code=200, example=Offer list',
-      Accept: 'application/json',
+    signal: params.config?.abortSignal,
+    params: {
+      userId: params.userId,
     },
   });
-  return data.map((loanOffer: ApiLoanOffer) => loanRequestMapper(loanOffer));
+  return loanRequestMapper(data.content);
 }
 
 export async function simulate(
-  accountId: string,
-  amount: number,
-  installments: number,
-  config: { abortSignal: GenericAbortSignal },
+  params: RepositoryParams<{
+    accountId: string,
+    amount: number,
+    installments: number,
+  }>,
 ) {
-  const { data } = await ApiClient.request<ApiLoanSimulation>({
-    url: '/account/loan/simulation',
-    method: 'GET',
-    signal: config.abortSignal,
-    headers: {
-      Prefer: 'code=200',
+  const { data } = await ApiClient.request<ApiResponseWrapped<ApiLoanSimulation>>({
+    url: 'loan-offers/LOAN/LOAN/offer/simulations',
+    method: 'POST',
+    signal: params.config?.abortSignal,
+    data: {
+      accountId: params.accountId,
+      amount: params.amount,
+      installments: params.installments,
     },
   });
-  return loanSimulationMapper(data);
+  return loanSimulationMapper(data.content);
 }
 
 export async function applyOffer(
-  userId: string,
-  accountId: string,
-  installments: number,
-  amount: number,
-  config: { abortSignal: GenericAbortSignal },
+  params: RepositoryParams<{
+    userId: string,
+    accountId: string,
+    installments: number,
+    amount: number,
+  }>,
 ) {
-  const { data } = await ApiClient.request<ApiLoanApply>({
-    url: '/loan/account/apply',
+  const { data } = await ApiClient.request<ApiResponseWrapped<ApiLoanApply>>({
+    url: '/generics',
     method: 'POST',
-    signal: config.abortSignal,
-    headers: {
-      Prefer: 'code=200',
-    },
+    signal: params.config?.abortSignal,
     data: {
-      userId,
-      accountId,
-      installments,
-      amount,
+      userId: params.userId,
+      accountId: params.accountId,
+      installments: params.installments,
+      amount: params.amount,
     },
   });
   return data;

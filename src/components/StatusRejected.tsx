@@ -1,14 +1,18 @@
 import { DButton, DIcon } from '@dynamic-framework/ui-react';
+import { useCallback } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-import WidgetUtils from '../utils/widgetUtils';
+import { SITE_PATH, SITE_URL } from '../config/widgetConfig';
 
 export default function StatusRejected() {
   const { t } = useTranslation();
-  const { goToPath } = WidgetUtils();
+
+  const handleContinue = useCallback(() => {
+    window.location.href = `${SITE_URL}/${SITE_PATH.DASHBOARD}`;
+  }, []);
 
   return (
-    <div className="col-12 col-lg-8 col-xl-6 d-flex flex-column gap-4 justify-content-center align-items-center">
+    <div className="d-flex flex-column gap-4 justify-content-center align-items-center">
       <div>
         <img
           src="https://cloud.modyocdn.com/uploads/a0d18d6a-c897-4247-84ba-ac114056deeb/original/Group_140.svg"
@@ -25,11 +29,15 @@ export default function StatusRejected() {
         />
       </h5>
       <div className="d-flex align-items-center gap-4 bg-white rounded-1 px-6 py-4 mb-4 shadow-sm">
-        <DIcon icon="chat" size="24px" theme="secondary" />
+        <DIcon
+          icon="chat"
+          size="24px"
+          theme="secondary"
+        />
         <p className="mb-0">{t('status.rejected.message')}</p>
       </div>
       <DButton
-        onClick={() => goToPath('DASHBOARD')}
+        onClick={handleContinue}
         text={t('status.rejected.button')}
       />
     </div>

@@ -1,9 +1,6 @@
 import {
   DOffcanvas,
   DButton,
-  DOffcanvasHeader,
-  DOffcanvasBody,
-  DOffcanvasFooter,
   useDPortalContext,
 } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
@@ -18,13 +15,13 @@ export default function OffcanvasTermsAndConditions() {
       openFrom="end"
       className="offcanvas-terms"
     >
-      <DOffcanvasHeader
+      <DOffcanvas.Header
         showCloseButton
         onClose={closePortal}
       >
         <h4 className="fw-bold">{t('termsAndConditions')}</h4>
-      </DOffcanvasHeader>
-      <DOffcanvasBody>
+      </DOffcanvas.Header>
+      <DOffcanvas.Body>
         <div className="d-flex flex-column gap-6">
           <p className="mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -94,15 +91,15 @@ export default function OffcanvasTermsAndConditions() {
           </p>
           <hr />
         </div>
-      </DOffcanvasBody>
-      <DOffcanvasFooter
-        footerActionPlacement="end"
+      </DOffcanvas.Body>
+      <DOffcanvas.Footer
+        actionPlacement="end"
       >
         <DButton
           text={t('agree')}
           onClick={closePortal}
         />
-      </DOffcanvasFooter>
+      </DOffcanvas.Footer>
     </DOffcanvas>
   );
 }

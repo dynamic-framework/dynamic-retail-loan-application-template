@@ -17,12 +17,12 @@ export default function useSimulation() {
     async () => {
       try {
         setLoading(true);
-        const data = await LoanRepository.simulate(
+        const data = await LoanRepository.simulate({
           accountId,
-          amount ?? 0,
-          installment,
-          { abortSignal: abortController.signal },
-        );
+          amount: amount ?? 0,
+          installments: installment,
+          config: { abortSignal: abortController.signal },
+        });
         dispatch(setSimulation(data));
         setLoading(false);
       } catch (error) {
@@ -30,7 +30,13 @@ export default function useSimulation() {
         errorHandler(error);
       }
     },
-    [accountId, amount, installment, abortController.signal, dispatch],
+    [
+      accountId,
+      amount,
+      installment,
+      abortController.signal,
+      dispatch,
+    ],
   );
 
   return {

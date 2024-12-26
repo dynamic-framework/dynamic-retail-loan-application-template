@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable react/jsx-props-no-spreading */
 import {
   DButton,
@@ -59,7 +58,7 @@ export default function CreditSimulation() {
   }, [dispatch]);
 
   return (
-    <div className="bg-white shadow-sm p-4 rounded d-flex flex-column gap-4">
+    <div className="d-flex flex-column gap-4">
       <DInputCurrency
         label={t('simulation.value')}
         id="creditAmount"
@@ -96,9 +95,7 @@ export default function CreditSimulation() {
             text={t('simulate')}
             loading={loading}
             onClick={simulate}
-            {...(request.amount && !loading) && {
-              iconEnd: 'check',
-            }}
+            iconEnd="check"
             {...disableButton && {
               state: 'disabled',
             }}

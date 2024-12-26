@@ -16,13 +16,12 @@ export default function useLoanRequestEffect() {
     (async () => {
       try {
         setLoading(true);
-        const data = await LoanRepository.listOffers(
-          USER_ID,
-          { abortSignal: abortController.signal },
-        );
-        const offer = data[0];
-        dispatch(setOffer(offer));
-        dispatch(setRequestedInstallment(offer.installments.minimum));
+        const data = await LoanRepository.listOffer({
+          userId: USER_ID,
+          config: { abortSignal: abortController.signal },
+        });
+        dispatch(setOffer(data));
+        dispatch(setRequestedInstallment(data.installments.minimum));
         setLoading(false);
       } catch (error) {
         if ((error as ApiError).name === 'CanceledError') return;
