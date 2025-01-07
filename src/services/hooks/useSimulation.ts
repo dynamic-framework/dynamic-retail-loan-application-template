@@ -19,7 +19,7 @@ export default function useSimulation() {
         setLoading(true);
         const data = await LoanRepository.simulate({
           accountId,
-          amount: amount ?? 0,
+          amount: amount as number,
           installments: installment,
           config: { abortSignal: abortController.signal },
         });

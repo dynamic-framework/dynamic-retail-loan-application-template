@@ -1,15 +1,10 @@
-import { DAlert, DButton } from '@dynamic-framework/ui-react';
-import { useCallback } from 'react';
+import { DAlert } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
 import { SITE_PATH, SITE_URL } from '../config/widgetConfig';
 
 export default function StatusPending() {
   const { t } = useTranslation();
-
-  const handleContinue = useCallback(() => {
-    window.location.href = `${SITE_URL}/${SITE_PATH.DASHBOARD}`;
-  }, []);
 
   return (
     <div className="d-flex flex-column gap-4 justify-content-center align-items-center">
@@ -28,10 +23,12 @@ export default function StatusPending() {
       >
         {t('status.pending.message')}
       </DAlert>
-      <DButton
-        onClick={handleContinue}
-        text={t('status.pending.button')}
-      />
+      <a
+        href={`${SITE_URL}/${SITE_PATH.DASHBOARD}`}
+        className="btn btn-primary"
+      >
+        {t('status.pending.button')}
+      </a>
     </div>
   );
 }

@@ -13,9 +13,7 @@ export default function ApplicationForm() {
   const { loading } = useLoanRequestEffect();
 
   if (status) {
-    return (
-      <ApplicationStatus status={status} />
-    );
+    return <ApplicationStatus status={status} />;
   }
 
   return (

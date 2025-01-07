@@ -1,15 +1,10 @@
-import { DButton, DIcon } from '@dynamic-framework/ui-react';
-import { useCallback } from 'react';
+import { DIcon } from '@dynamic-framework/ui-react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { SITE_PATH, SITE_URL } from '../config/widgetConfig';
 
 export default function StatusRejected() {
   const { t } = useTranslation();
-
-  const handleContinue = useCallback(() => {
-    window.location.href = `${SITE_URL}/${SITE_PATH.DASHBOARD}`;
-  }, []);
 
   return (
     <div className="d-flex flex-column gap-4 justify-content-center align-items-center">
@@ -36,10 +31,12 @@ export default function StatusRejected() {
         />
         <p className="mb-0">{t('status.rejected.message')}</p>
       </div>
-      <DButton
-        onClick={handleContinue}
-        text={t('status.rejected.button')}
-      />
+      <a
+        href={`${SITE_URL}/${SITE_PATH.DASHBOARD}`}
+        className="btn btn-primary"
+      >
+        {t('status.rejected.button')}
+      </a>
     </div>
   );
 }
