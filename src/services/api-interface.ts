@@ -2,7 +2,7 @@ export type ApiErrorItem = {
   status: string;
   code: string;
   title: string;
-  message_Code: string;
+  message_code: string;
   detail: string;
 };
 
