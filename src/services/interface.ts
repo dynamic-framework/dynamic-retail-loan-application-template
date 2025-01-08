@@ -1,7 +1,5 @@
 export type LoanOffer = {
   accountId: string;
-  name: string;
-  type: string;
   minAmount: number;
   maxAmount: number;
   installments: {

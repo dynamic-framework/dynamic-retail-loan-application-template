@@ -2,38 +2,64 @@ export type ApiErrorItem = {
   status: string;
   code: string;
   title: string;
-  messageCode: string;
+  message_code: string;
   detail: string;
 };
 
+export type ApiResponseWrapped<T> = {
+  content: T;
+};
+
 export type ApiLoanOffer = {
-  accountId: string;
-  name: string;
-  type: string;
-  minAmount: number;
-  maxAmount: number;
-  installments: {
+  id: string;
+  amount_range: {
     minimum: number;
     maximum: number;
-    period: string;
+  },
+  term: {
+    range: {
+      minimum: number;
+      maximum: number;
+    },
+    period: {
+      id: string;
+      name: string;
+      code: string;
+    }
   }
 };
 
-export type ApiLoanOffers = Array<ApiLoanOffer>;
-
 export type ApiLoanSimulation = {
-  accountId: string;
+  simulation_id: string;
+  offer_id: string;
+  loan_amount: number;
+  loan_total: number;
+  rate_settings: RateSettings;
+  installments: Installments;
+  transaction_fee: number;
+};
+
+export type Installments = {
   amount: number;
-  total: number;
-  installments: {
-    count: number;
-    amount: number;
-    period: string;
-  };
-  interestRate: {
-    annually: number;
-    monthly: number;
-  }
+  term: Term;
+};
+
+export type Term = {
+  count: number;
+  description: string;
+  period: Period;
+};
+
+export type Period = {
+  id: string;
+  name: string;
+  code: string;
+};
+
+export type RateSettings = {
+  monthly_rate: number;
+  yearly_rate: number;
+  calculation_method: string;
 };
 
 export type ApiLoanApply = {
