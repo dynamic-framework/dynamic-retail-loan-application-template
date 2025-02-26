@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.event.repository.is_template == false }}
     outputs:
       is_first_commit: ${{ steps.check_commit.outputs.is_first_commit }}
-    steps: 
+    steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
