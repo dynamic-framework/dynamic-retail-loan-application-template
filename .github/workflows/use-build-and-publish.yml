@@ -8,5 +8,5 @@ on:
 jobs:
   use-build-and-publish:
     if: ${{ github.event.repository.is_template == false }}
-    uses: dynamic-framework/.github/.github/workflows/build-and-publish-business.yml@main
+    uses: dynamic-framework/.github/.github/workflows/build-and-publish-retail.yml@main
     secrets: inherit
