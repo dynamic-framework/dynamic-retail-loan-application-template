@@ -9,11 +9,10 @@ export default function StatusRejected() {
   return (
     <div className="d-flex flex-column gap-4 justify-content-center align-items-center">
       <div>
-        <img
-          src="https://cloud.modyocdn.com/uploads/a0d18d6a-c897-4247-84ba-ac114056deeb/original/Group_140.svg"
-          alt="Rejected"
-          height={256}
-          width={256}
+        <DIcon
+          icon="CalendarX2"
+          color="warning"
+          size="5rem"
         />
       </div>
       <h5 className="fw-bold text-gray text-center">
@@ -25,9 +24,9 @@ export default function StatusRejected() {
       </h5>
       <div className="d-flex align-items-center gap-4 bg-white rounded-1 px-6 py-4 mb-4 shadow-sm">
         <DIcon
-          icon="chat"
+          icon="Chat"
           size="24px"
-          theme="secondary"
+          color="secondary"
         />
         <p className="mb-0">{t('status.rejected.message')}</p>
       </div>

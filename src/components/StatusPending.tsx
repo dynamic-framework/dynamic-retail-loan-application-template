@@ -1,4 +1,4 @@
-import { DAlert } from '@dynamic-framework/ui-react';
+import { DIcon, DAlert } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
 import { SITE_PATH, SITE_URL } from '../config/widgetConfig';
@@ -9,10 +9,10 @@ export default function StatusPending() {
   return (
     <div className="d-flex flex-column gap-4 justify-content-center align-items-center">
       <div className="d-block">
-        <img
-          src="https://cloud.modyocdn.com/uploads/5f54a55e-6806-4e8a-92fd-252d7954cb15/original/Frame_140.svg"
-          alt="Pending"
-          height={256}
+        <DIcon
+          icon="CalendarCheck2"
+          color="success"
+          size="5rem"
         />
       </div>
       <h2 className="fs-5 fw-bold text-gray text-center">

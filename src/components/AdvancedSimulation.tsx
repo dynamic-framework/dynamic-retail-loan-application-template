@@ -66,13 +66,11 @@ export default function AdvancedSimulation() {
             <DTooltip
               className="border-0"
               placement="top"
-              theme="secondary"
               Component={(
                 <DIcon
-                  icon="question-circle"
-                  theme="secondary"
-                  size="1rem"
-                  className="cursor-help"
+                  icon="CircleQuestionMark"
+                  size=".8rem"
+                  className="cursor-help text-muted"
                 />
               )}
             >
@@ -92,13 +90,11 @@ export default function AdvancedSimulation() {
               placement="top"
               padding={16}
               offSet={5}
-              theme="secondary"
               Component={(
                 <DIcon
-                  icon="question-circle"
-                  theme="secondary"
-                  size="1rem"
-                  className="cursor-help"
+                  icon="CircleQuestionMark"
+                  size=".8rem"
+                  className="cursor-help text-muted"
                 />
               )}
             >
@@ -116,19 +112,19 @@ export default function AdvancedSimulation() {
           {t('totalPayment', { total: format(totalDue) })}
         </div>
       )}
-      <span className="small">
+      <span className="small text-muted">
         <Trans
           i18nKey="annotation"
           components={{
             1: <a
               href="/"
-              className="text-secondary"
+              className="text-muted text-decoration-underline"
               role="button"
               aria-label="support"
               aria-hidden="true"
             />,
             2: <span
-              className="text-secondary text-decoration-underline"
+              className="text-muted text-decoration-underline"
               onClick={() => openPortal('offcanvasTermsAndConditions', undefined)}
               onKeyDown={() => { }}
               role="button"
@@ -144,7 +140,7 @@ export default function AdvancedSimulation() {
             text={t('actions.decline')}
             className="w-100"
             variant="outline"
-            theme="secondary"
+            color="secondary"
             onClick={() => openPortal('modalDeclineOffer', undefined)}
           />
         </div>
